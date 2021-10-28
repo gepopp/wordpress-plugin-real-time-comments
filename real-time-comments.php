@@ -36,5 +36,8 @@ $loader->addPsr4( 'RealTimeComments\\', __DIR__ . '/classes' );
 \A7\autoload( __DIR__ . '/src' );
 \A7\autoload( __DIR__ . '/shortcodes' );
 
+
+#TODO implement a factory for the Boot classes in first refactor
 $instance = Boot::getInstance();
 $instance->enqueue();
+$instance->swap_form();

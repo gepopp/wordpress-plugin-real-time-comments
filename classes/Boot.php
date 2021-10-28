@@ -18,9 +18,15 @@ class Boot {
 
 	}
 
-	public function enqueue(){
+	public function enqueue() : void {
 
 		new Enqueue();
+
+	}
+
+	public function swap_form() : void {
+
+		new Form();
 
 	}
 
