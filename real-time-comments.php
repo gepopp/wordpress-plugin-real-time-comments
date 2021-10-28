@@ -17,6 +17,7 @@ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 */
 namespace RealTimeComments;
 
+
 if ( ! function_exists( 'get_plugin_data' ) ) {
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
@@ -30,7 +31,10 @@ define( 'RTC_URL', plugin_dir_url( __FILE__ ) );
 define( 'RTC_TEXTDOMAIN', $plugindata['TextDomain'] );
 
 $loader = require_once( RTC_DIR . '/vendor/autoload.php' );
+$loader->addPsr4( 'RealTimeComments\\', __DIR__ . '/classes' );
 
 \A7\autoload( __DIR__ . '/src' );
 \A7\autoload( __DIR__ . '/shortcodes' );
 
+$instance = Boot::getInstance();
+$instance->enqueue();
