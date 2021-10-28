@@ -20,6 +20,8 @@ class Enqueue {
 			RTC_VERSION
 		);
 
+		wp_enqueue_script('real_time_comments_script', RTC_URL . 'dist/main.js', [], RTC_VERSION, true);
+
 	}
 
 

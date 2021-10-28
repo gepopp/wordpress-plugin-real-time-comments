@@ -18,6 +18,8 @@ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 namespace RealTimeComments;
 
 
+use Pusher\Pusher;
+
 if ( ! function_exists( 'get_plugin_data' ) ) {
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
@@ -41,3 +43,18 @@ $loader->addPsr4( 'RealTimeComments\\', __DIR__ . '/classes' );
 $instance = Boot::getInstance();
 $instance->enqueue();
 $instance->swap_form();
+
+
+$options = array(
+	'cluster' => 'eu',
+	'useTLS' => true
+);
+$pusher = new Pusher(
+	'33200611800c555398d6',
+	'c842d271cbae62e6dd9c',
+	'1289113',
+	$options
+);
+
+$data['message'] = 'hello world';
+$pusher->trigger('my-channel', 'my-event', $data);
