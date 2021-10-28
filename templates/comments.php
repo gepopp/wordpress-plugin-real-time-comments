@@ -35,7 +35,7 @@
 <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
 <script>
 
-    const socket = require("socket.io-client")("https://dev.immobilien-redaktion.com:3000");
+    const socket = io("https://dev.immobilien-redaktion.com:3000");
 
     socket.on("connect_error", (err) => {
         console.log(`connect_error due to ${err.message}`);
