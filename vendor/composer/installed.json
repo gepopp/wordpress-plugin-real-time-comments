@@ -1,0 +1,119 @@
+{
+    "packages": [
+        {
+            "name": "a7/autoload",
+            "version": "2.1",
+            "version_normalized": "2.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/a7/autoload.git",
+                "reference": "2d4a63c88150869883e43ad04e04b81125b55fd9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/a7/autoload/zipball/2d4a63c88150869883e43ad04e04b81125b55fd9",
+                "reference": "2d4a63c88150869883e43ad04e04b81125b55fd9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "time": "2019-03-28T11:26:32+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "package.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Unlicense"
+            ],
+            "authors": [
+                {
+                    "name": "A7",
+                    "email": "a7@fastmail.com",
+                    "homepage": "https://github.com/a7"
+                }
+            ],
+            "description": "Automatically and recursively require_once all php files in a given directory.",
+            "support": {
+                "issues": "https://github.com/a7/autoload/issues",
+                "source": "https://github.com/a7/autoload/tree/2.1"
+            },
+            "install-path": "../a7/autoload"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.9",
+            "version_normalized": "1.1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/predis/predis.git",
+                "reference": "c50c3393bb9f47fa012d0cdfb727a266b0818259"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/predis/predis/zipball/c50c3393bb9f47fa012d0cdfb727a266b0818259",
+                "reference": "c50c3393bb9f47fa012d0cdfb727a266b0818259",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "time": "2021-10-05T19:02:38+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net",
+                    "role": "Creator & Maintainer"
+                },
+                {
+                    "name": "Till Krüss",
+                    "homepage": "https://till.im",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/predis/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "support": {
+                "issues": "https://github.com/predis/predis/issues",
+                "source": "https://github.com/predis/predis/tree/v1.1.9"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tillkruss",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../predis/predis"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
