@@ -34,7 +34,7 @@
 
 <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
 <script>
-    var socket = io("https://ir.test:25");
+    var socket = io("https://ir.test:3000");
 </script>
 
 
