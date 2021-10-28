@@ -5,7 +5,7 @@ that displays comments in real time using a sosket conntection with [socket.io](
 
 ## Next ToDo's for V 0.0.1
 
-1. install and enqueue [tailwind css][https://tailwindcss.com]
+1. install and enqueue [tailwind css](https://tailwindcss.com)
 2. implement a basic form
 3. install [socket.io](https://socket.io/) and [vue 3](https://vuejs.org/)
 4. impement a socket connection when form is loaded
