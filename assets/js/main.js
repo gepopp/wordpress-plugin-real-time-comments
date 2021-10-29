@@ -5,6 +5,8 @@ import Vue from "vue";
 import comments from "./components/comments.vue";
 import commentsForm from "./components/commentsForm.vue";
 
+
+
 import Axios from 'axios'
 
 const Api = Axios.create({
@@ -26,10 +28,11 @@ const Ajax = Axios.create({
 Vue.prototype.$xhr = Ajax;
 
 
+
 const app = new Vue({
     el: '#real-time-comments-container',
     components : {
         comments,
-        commentsForm
+        commentsForm,
     }
 });

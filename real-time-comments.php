@@ -6,7 +6,7 @@
 Plugin Name:  Real Time Comments
 Description:  Swaps out the Wordpress default comments funcionality to a chat-like real time functionality
 Plugin URI:   https://poppgerhard.at
-Version:      0.0.2
+Version:      0.1.0
 Author:       Gerhard Popp
 Author URI:   https://poppgerhard.at
 Text Domain:  real-time-comments
@@ -43,18 +43,7 @@ $loader->addPsr4( 'RealTimeComments\\', __DIR__ . '/classes' );
 $instance = Boot::getInstance();
 $instance->enqueue();
 $instance->swap_form();
+$instance->new_comment();
 
 
-$options = array(
-	'cluster' => 'eu',
-	'useTLS' => true
-);
-$pusher = new Pusher(
-	'33200611800c555398d6',
-	'c842d271cbae62e6dd9c',
-	'1289113',
-	$options
-);
 
-$data['message'] = 'hello world';
-$pusher->trigger('my-channel', 'my-event', $data);

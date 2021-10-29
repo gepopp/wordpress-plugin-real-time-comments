@@ -30,6 +30,12 @@ class Boot {
 
 	}
 
+	public function new_comment() : void {
+
+		new NewComment();
+
+	}
+
 	private function __construct() {
 	}
 
