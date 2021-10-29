@@ -6,7 +6,7 @@
 Plugin Name:  Real Time Comments
 Description:  Swaps out the Wordpress default comments funcionality to a chat-like real time functionality
 Plugin URI:   https://poppgerhard.at
-Version:      0.1.0
+Version:      0.1.1
 Author:       Gerhard Popp
 Author URI:   https://poppgerhard.at
 Text Domain:  real-time-comments
@@ -30,7 +30,6 @@ define( 'RTC_VERSION', $plugindata['Version'] );
 define( 'RTC_DIR', __DIR__ );
 define( 'RTC_FILE', __FILE__ );
 define( 'RTC_URL', plugin_dir_url( __FILE__ ) );
-define( 'RTC_TEXTDOMAIN', $plugindata['TextDomain'] );
 
 $loader = require_once( RTC_DIR . '/vendor/autoload.php' );
 $loader->addPsr4( 'RealTimeComments\\', __DIR__ . '/classes' );
@@ -45,5 +44,6 @@ $instance->enqueue();
 $instance->swap_form();
 $instance->new_comment();
 
-
-
+add_action( 'init', function (){
+	load_plugin_textdomain( 'real-time-comments', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+});

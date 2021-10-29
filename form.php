@@ -1,3 +1,0 @@
-<form>
-    <textarea></textarea>
-</form>
