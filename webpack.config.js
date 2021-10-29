@@ -1,6 +1,7 @@
 const path                 = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isProduction         = 'production' === process.env.NODE_ENV;
+const { VueLoaderPlugin } = require('vue-loader')
 
 // Set the build prefix.
 let prefix = isProduction ? '.min' : '';
@@ -17,6 +18,10 @@ const config = {
 	module: {
 		rules: [
 			{
+				test: /\.vue$/,
+				loader: 'vue-loader'
+			},
+			{
 				test: /\.js$/,
 				loader: 'babel-loader',
 				options: {
@@ -29,7 +34,12 @@ const config = {
 			},
 			{
 				test: /\.s[ac]ss$/i,
-				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader',
+				use: [
+					process.env.NODE_ENV !== 'production'
+					? 'vue-style-loader'
+					: MiniCssExtractPlugin.loader,
+					'css-loader',
+					'sass-loader',
 					{
 						loader: 'postcss-loader',
 						options: {
@@ -47,6 +57,14 @@ const config = {
 			},
 		]
 	},
-	plugins: [new MiniCssExtractPlugin()]
+	plugins: [
+		new VueLoaderPlugin(),
+		new MiniCssExtractPlugin(),
+	],
+	resolve: {
+		alias: {
+			vue: process.env.NODE_ENV == 'production' ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
+		}
+	}
 }
 module.exports = config

@@ -6,7 +6,7 @@
 Plugin Name:  Real Time Comments
 Description:  Swaps out the Wordpress default comments funcionality to a chat-like real time functionality
 Plugin URI:   https://poppgerhard.at
-Version:      0.0.1
+Version:      0.0.2
 Author:       Gerhard Popp
 Author URI:   https://poppgerhard.at
 Text Domain:  real-time-comments
