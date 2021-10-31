@@ -35,9 +35,8 @@ const config = {
 			{
 				test: /\.s[ac]ss$/i,
 				use: [
-					process.env.NODE_ENV !== 'production'
-					? 'vue-style-loader'
-					: MiniCssExtractPlugin.loader,
+					'vue-style-loader',
+					MiniCssExtractPlugin.loader,
 					'css-loader',
 					'sass-loader',
 					{

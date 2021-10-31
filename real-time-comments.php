@@ -40,9 +40,7 @@ $loader->addPsr4( 'RealTimeComments\\', __DIR__ . '/classes' );
 
 #TODO implement a factory for the Boot classes in first refactor
 $instance = Boot::getInstance();
-$instance->enqueue();
-$instance->swap_form();
-$instance->new_comment();
+$instance->boot();
 
 add_action( 'init', function (){
 	load_plugin_textdomain( 'real-time-comments', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );

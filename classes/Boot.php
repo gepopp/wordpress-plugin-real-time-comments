@@ -8,6 +8,14 @@ class Boot {
 	private static $instance = false;
 
 
+	private array $boot_classes = [
+		Enqueue::class,
+		Form::class,
+		NewComment::class,
+		AdminSettingsPages::class
+	];
+
+
 	public static function getInstance(): Boot {
 
 		if ( ! self::$instance ) {
@@ -18,21 +26,16 @@ class Boot {
 
 	}
 
-	public function enqueue() : void {
+	public function boot() : void {
 
-		new Enqueue();
 
-	}
+		foreach ( $this->boot_classes as $boot_class ) {
 
-	public function swap_form() : void {
+			if(class_exists($boot_class)){
+				new $boot_class();
+			}
+		}
 
-		new Form();
-
-	}
-
-	public function new_comment() : void {
-
-		new NewComment();
 
 	}
 

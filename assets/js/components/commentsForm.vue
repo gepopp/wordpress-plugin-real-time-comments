@@ -45,8 +45,9 @@
             :placeholder="translations.comment_placeholder"
             v-model="newComment"
             v-on:keyup.enter="validation"
+            @focus="submitError = ''"
         >
-        <p class="text-xs text-red-600 absolute" v-text="submitError"></p>
+        <p class="text-xs text-red-600 absolute" v-html="submitError"></p>
       </div>
       <div class="relative"
            @mouseenter="toggleWarn('enter')"

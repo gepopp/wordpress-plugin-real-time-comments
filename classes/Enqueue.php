@@ -7,15 +7,18 @@ class Enqueue {
 
 	public function __construct() {
 
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_frontend_scripts' ] );
-		add_filter( 'body_class', function ( $classes ) {
-			return array_merge( $classes, [ 'app' ] );
-		} );
-		add_filter( 'rest_allow_anonymous_comments', '__return_true' );
+
+			add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_frontend_scripts' ] );
+			add_filter( 'rest_allow_anonymous_comments', '__return_true' );
+
 	}
 
 
 	public function enqueue_frontend_scripts() {
+
+
+		if(!is_singular() && !is_single()) return;
+
 
 		wp_enqueue_style(
 			'real_time_comments_styles',
