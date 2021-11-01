@@ -10,7 +10,7 @@
   </div>
   <div class="max-w-sm w-full mb-3" v-else>
     <div class="flex space-x-4">
-      <div class="rounded-full h-12 w-12">
+      <div class="rounded-full h-12 w-12 border-2 border-gray-900 p-1">
         <img :src="user.avatar_urls[48]" class="w-full h-auto rounded-full">
       </div>
       <div class="flex-1 py-1">

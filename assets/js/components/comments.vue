@@ -1,25 +1,25 @@
 <template>
   <div class="relative w-full p-3">
     <transition-group name="list" tag="div">
-      <div v-for="comment in comments" class="list-item" :key="comment.id">
+      <div v-for="comment in comments" class="list-item" :key="comment.comment_ID">
         <div class="border-b border-gray-300 shadow p-4 w-full">
           <single-comment :comment="comment"></single-comment>
           <div class="flex mt-3">
             <div class="w-20 p-1"></div>
             <div class="text-gray-700 text-sm w-full">
-              <span v-text="translations.reply_now" class="underline uppercase font-bold text-gray-600 cursor-pointer" @click="showReplies = comment.id"></span>
+              <span v-text="translations.reply_now" class="underline uppercase font-bold text-gray-600 cursor-pointer" @click="showReplies = comment.comment_ID"></span>
               |
               <span v-text="translations.replies"></span> <span v-text="comment.children.length"></span>
-              <span v-if="comment.children.length && showReplies != comment.id" v-text="translations.show_replies" class="underline cursor-pointer" @click="showReplies = comment.id"></span>
-              <span v-if="comment.children.length && showReplies == comment.id" v-text="translations.close_replies" class="underline cursor-pointer" @click="showReplies = false"></span>
-              <div v-show="showReplies == comment.id" class="mt-3">
-                <div v-for="child in comment.children" :key="child.id">
+              <span v-if="comment.children.length && showReplies != comment.comment_ID" v-text="translations.show_replies" class="underline cursor-pointer" @click="showReplies = comment.comment_ID"></span>
+              <span v-if="comment.children.length && showReplies == comment.comment_ID" v-text="translations.close_replies" class="underline cursor-pointer" @click="showReplies = false"></span>
+              <div v-show="showReplies == comment.comment_ID" class="mt-3">
+                <div v-for="child in comment.children" :key="child.comment_ID">
                   <div class="border-b border-gray-300 shadow p-4 w-full">
                     <single-comment :comment="child"></single-comment>
                   </div>
                 </div>
                 <div class="p-3 bg-gray-300">
-                  <comments-form :post_id="post_id" :user_id="user_id" :parent_id="comment.id"></comments-form>
+                  <comments-form :post_id="post_id" :user_id="user_id" :parent_id="comment.comment_ID"></comments-form>
                 </div>
               </div>
             </div>
@@ -87,52 +87,32 @@ export default {
     var channel = pusher.subscribe(this.post_id.toString());
     channel.bind('new-comment', (data) => {
 
-      if (data.post == this.post_id) {
-        if (data.parent == 0) {
-          this.comments.unshift(data)
-        } else {
+      if (!data.comment_parent) {
+        this.comments.unshift(data);
+      } else {
           this.comments.forEach(comment => {
-
-            if (comment.id == data.parent) {
-              comment.children.unshift(data)
+            if(comment.comment_ID == data.comment_parent){
+              comment.children.unshift(data);
             }
-
-          });
-        }
+          })
       }
+
+
     });
-
-
   },
   methods: {
-    loadComments(page) {
-      var url = '/wp/v2/comments?post=' + this.post_id + '&page=' + page + '&parent=0'
+    loadComments() {
+      var url = '/rtc/v1/comments/' + this.post_id + '?page=' + this.page;
       this.$rest(url, {})
           .then((response) => {
-            response.data.forEach((comment) => {
-              this.loadReplies(comment);
-            })
-            if (!response.data.length) this.loading = false;
-          })
-    },
-    loadReplies(parent) {
-
-      var url = '/wp/v2/comments?post=' + this.post_id + '&parent=' + parent.id
-      this.$rest(url, {})
-          .then((response) => {
-            parent.children = response.data;
-            this.comments.push(parent);
-          })
-          .catch(() => {
-          })
-          .then(() => {
+            this.comments = this.comments.concat( response.data );
             this.loading = false;
-          });
+          })
     },
     next() {
       this.loading = true;
       this.page++;
-      this.loadComments(this.page);
+      this.loadComments();
     },
 
   },

@@ -45,3 +45,4 @@ $instance->boot();
 add_action( 'init', function (){
 	load_plugin_textdomain( 'real-time-comments', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 });
+

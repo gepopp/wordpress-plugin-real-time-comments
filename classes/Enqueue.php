@@ -46,7 +46,7 @@ class Enqueue {
 			'reply_now'           => __( 'reply now', 'real-time-comments' ),
 			'show_replies'        => __( 'show replies', 'real-time-comments' ),
 			'close_replies'       => __( 'close replies', 'real-time-comments' ),
-			'posted'              => __( 'Posted at:', 'real-time-comments' ),
+			'posted'              => __( 'Posted', 'real-time-comments' ),
 			'load_more'           => __( 'load more', 'real-time-comments' ),
 		] );
 		wp_localize_script( 'real_time_comments_script', 'rtc_xhr', [

@@ -12,7 +12,8 @@ class Boot {
 		Enqueue::class,
 		Form::class,
 		NewComment::class,
-		AdminSettingsPages::class
+		AdminSettingsPages::class,
+		Rest::class
 	];
 
 
