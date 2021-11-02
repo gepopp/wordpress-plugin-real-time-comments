@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Real Time Comments\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 21:00+0000\n"
-"PO-Revision-Date: 2021-11-01 09:53+0000\n"
+"PO-Revision-Date: 2021-11-01 14:18+0000\n"
 "Last-Translator: Gerhard Popp\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -21,11 +21,11 @@ msgstr "Antworten schliessen"
 
 #: classes/AdminSettingsPages.php:21
 msgid "Comments Settings"
-msgstr ""
+msgstr "Kommentare Einstellungen"
 
 #: classes/AdminSettingsPages.php:39
 msgid "Connection Settings to pusher"
-msgstr ""
+msgstr "pusher Verbindungseinstellungen"
 
 #: classes/Enqueue.php:39
 msgid "enter your comment"
@@ -43,6 +43,10 @@ msgstr "https://poppgerhard.at"
 #: classes/Enqueue.php:50
 msgid "load more"
 msgstr "weitere laden"
+
+#: classes/Enqueue.php:51
+msgid "Nobody commented yet, be the first"
+msgstr "Bis jetzt hat noch niemand kommentiert, sei der Erste!"
 
 #: classes/Enqueue.php:43
 msgid "please enter a valid email address"
@@ -62,15 +66,15 @@ msgstr "Geshrieben"
 
 #: classes/AdminSettingsPages.php:76
 msgid "Puser app id"
-msgstr ""
+msgstr "Puher App ID"
 
 #: classes/AdminSettingsPages.php:46
 msgid "Puser auth key"
-msgstr ""
+msgstr "Pusher Auth Key"
 
 #: classes/AdminSettingsPages.php:61
 msgid "Puser secret"
-msgstr ""
+msgstr "Pusher Secret"
 
 #. Name of the plugin
 #: classes/AdminSettingsPages.php:20
@@ -79,7 +83,7 @@ msgstr "Real Time Comments"
 
 #: classes/AdminSettingsPages.php:101
 msgid "Real time comments settings"
-msgstr ""
+msgstr "Real time comments Einstellungen"
 
 #: classes/AdminSettingsPages.php:116
 #, php-format
@@ -87,6 +91,8 @@ msgid ""
 "Real time comments uses Pusher as a websocket service to show new comments "
 "in real time. Setup your pusher account <a href=\"%s\">here</a>"
 msgstr ""
+"Real Time Comments verwendet die API von Pusher um neue Kommentare in "
+"Echtzeit an zu zeigen. <a href=\"%s\">Zu Pusher</a>"
 
 #: classes/Enqueue.php:45
 msgid "replies:"
@@ -116,7 +122,7 @@ msgstr ""
 msgid "thank you for your comment"
 msgstr "Danke, dein Kommentar wurde veröffentlicht"
 
-#: templates/comments.php:3
+#: templates/comments.php:13
 msgid "Write a comment"
 msgstr "Schreibe einen Kommentar "
 

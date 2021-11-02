@@ -14,16 +14,22 @@ class Rest {
 
 		register_rest_route( 'rtc/v1', '/comments/(?P<id>\d+)', [
 			'methods'  => 'GET',
-			'callback' => function (  $request ) {
+			'callback' => function ( $request ) {
 				$post_id = $request['id'];
-				$page = $request->get_param( 'page' ) ?? 1;
+				$page    = $request->get_param( 'page' ) ?? 1;
 
-				$wp_comments = get_comments(['post_id' => $post_id, 'parent' => 0, 'number' => 10, 'paged' => $page ]);
+				$wp_comments = get_comments( [
+					'post_id' => $post_id,
+					'parent'  => 0,
+					'number'  => 10,
+					'paged'   => $page,
+					'status'  => 1,
+				] );
 
 				$comments = [];
 
 				foreach ( $wp_comments as $wp_comment ) {
-					$comments[] = new Comment($wp_comment->comment_ID);
+					$comments[] = new Comment( $wp_comment->comment_ID );
 				}
 
 				return $comments;

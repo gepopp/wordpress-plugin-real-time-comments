@@ -48,6 +48,7 @@ class Enqueue {
 			'close_replies'       => __( 'close replies', 'real-time-comments' ),
 			'posted'              => __( 'Posted', 'real-time-comments' ),
 			'load_more'           => __( 'load more', 'real-time-comments' ),
+			'no_comments'         => __('Nobody commented yet, be the first', 'real-time-comments')
 		] );
 		wp_localize_script( 'real_time_comments_script', 'rtc_xhr', [
 			'rootapiurl' => esc_url_raw( rest_url() ),

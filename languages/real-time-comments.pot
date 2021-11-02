@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Real Time Comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-01 09:53+0000\n"
+"POT-Creation-Date: 2021-11-01 14:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -43,6 +43,10 @@ msgstr ""
 
 #: classes/Enqueue.php:50
 msgid "load more"
+msgstr ""
+
+#: classes/Enqueue.php:51
+msgid "Nobody commented yet, be the first"
 msgstr ""
 
 #: classes/Enqueue.php:43
@@ -115,7 +119,7 @@ msgstr ""
 msgid "thank you for your comment"
 msgstr ""
 
-#: templates/comments.php:3
+#: templates/comments.php:13
 msgid "Write a comment"
 msgstr ""
 

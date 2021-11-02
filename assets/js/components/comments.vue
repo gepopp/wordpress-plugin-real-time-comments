@@ -1,7 +1,7 @@
 <template>
-  <div class="relative w-full p-3">
+  <div class="relative w-full p-3" v-if="comments.length">
     <transition-group name="list" tag="div">
-      <div v-for="comment in comments" class="list-item" :key="comment.comment_ID">
+      <div v-for="comment in comments" class="list-item" :key="comment.comment_ID" >
         <div class="border-b border-gray-300 shadow p-4 w-full">
           <single-comment :comment="comment"></single-comment>
           <div class="flex mt-3">
@@ -23,7 +23,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -49,7 +48,9 @@
     <div class="flex justify-center p-3" v-show="!loading && showNext">
       <p @click="next" class="cursor-pointer" v-text="translations.load_more"></p>
     </div>
-
+  </div>
+  <div class="relative w-full h-48 flex items-center justify-center" v-else>
+    <p v-text="translations.no_comments"></p>
   </div>
 </template>
 
@@ -90,11 +91,11 @@ export default {
       if (!data.comment_parent) {
         this.comments.unshift(data);
       } else {
-          this.comments.forEach(comment => {
-            if(comment.comment_ID == data.comment_parent){
-              comment.children.unshift(data);
-            }
-          })
+        this.comments.forEach(comment => {
+          if (comment.comment_ID == data.comment_parent) {
+            comment.children.unshift(data);
+          }
+        })
       }
     });
   },
@@ -103,7 +104,7 @@ export default {
       var url = '/rtc/v1/comments/' + this.post_id + '?page=' + this.page;
       this.$rest(url, {})
           .then((response) => {
-            this.comments = this.comments.concat( response.data );
+            this.comments = this.comments.concat(response.data);
             this.loading = false;
           })
     },
