@@ -5,7 +5,7 @@
         <div class="flex-1 relative">
           <input type="text"
                  name="name"
-                 class="block p-3 w-full"
+                 class="block p-3 w-full text-gray-800"
                  :placeholder="translations.name_placeholder"
                  v-model="user.name"
                  @focus="errors.name = ''"
@@ -20,7 +20,7 @@
         <div class="flex-1 relative">
           <input type="email"
                  name="email"
-                 class="block p-3 w-full"
+                 class="block p-3 w-full text-gray-800"
                  :placeholder="translations.email_placeholder"
                  v-model="user.email"
                  @focus="errors.email = ''"
@@ -41,7 +41,7 @@
       <div class="w-full relative">
         <input
             type="text"
-            class="block bg-white p-3 flex-1 w-full"
+            class="block bg-white p-3 flex-1 w-full text-gray-800"
             :placeholder="translations.comment_placeholder"
             v-model="newComment"
             v-on:keyup.enter="validation"

@@ -9,7 +9,7 @@
         <span v-text="translations.posted + ' ' + comment.date_for_humans"></span>
       </div>
       <div class="space-y-2">
-        <div class="rounded font-semibold" v-html="comment.comment_content"></div>
+        <div class="rounded font-semibold text-gray-800" v-html="comment.comment_content"></div>
       </div>
     </div>
   </div>
