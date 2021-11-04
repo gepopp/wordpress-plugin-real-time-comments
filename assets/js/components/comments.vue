@@ -1,11 +1,11 @@
 <template>
-  <div class="relative w-full p-3" v-if="comments.length">
+  <div class="relative w-full" v-if="comments.length">
     <transition-group name="list" tag="div">
       <div v-for="comment in comments" class="list-item" :key="comment.comment_ID" >
-        <div class="border-b border-gray-300 shadow p-4 w-full">
+        <div class="border-b border-gray-300 shadow p-4 w-full bg-white">
           <single-comment :comment="comment"></single-comment>
           <div class="flex mt-3">
-            <div class="w-20 p-1"></div>
+            <div class="w-12 p-1"></div>
             <div class="text-gray-700 text-sm w-full">
               <span v-text="translations.reply_now" class="underline uppercase font-bold text-gray-600 cursor-pointer" @click="showReplies = comment.comment_ID"></span>
               |
@@ -62,7 +62,7 @@ import Pusher from 'pusher-js';
 
 export default {
   name: "comments",
-  props: ['post_id', 'count', 'user_id'],
+  props: ['post_id', 'count', 'user_id', 'paged'],
   components: {
     commentsForm,
     SingleComment

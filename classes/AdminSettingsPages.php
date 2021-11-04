@@ -35,10 +35,33 @@ class AdminSettingsPages {
 		} // end if
 
 		add_settings_section(
+			'rtc_comments_settings_section',
+			__('Settings for comments output', 'real-time-comments'),
+			[ $this, 'settings_section_comment_content' ],
+			'rtc_settings_page'
+		);
+
+
+		add_settings_section(
 			'rtc_general_settings_section',
 			__('Connection Settings to pusher', 'real-time-comments'),
 			[ $this, 'settings_section_content' ],
 			'rtc_settings_page'
+		);
+
+		add_settings_field(
+			'comments_paged',
+			__('Comments displayed', 'real-time-comments'),
+			[
+				$this,
+				'rtc_settings_input_field',
+			],
+			'rtc_settings_page',
+			'rtc_comments_settings_section',
+			[
+				'type' => 'text',
+				'name' => 'comments_page',
+			]
 		);
 
 		add_settings_field(
@@ -93,6 +116,9 @@ class AdminSettingsPages {
 		);
 	}
 
+    public function settings_section_comment_content(){
+       echo __('How comments should be displayed.', 'real-time-comments');
+    }
 
 
 	public function settings_page_content(){
