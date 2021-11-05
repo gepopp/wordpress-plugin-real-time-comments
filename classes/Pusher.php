@@ -5,12 +5,12 @@ namespace RealTimeComments;
 class Pusher {
 
 
-	protected string $auth_key;
-	protected string $secret;
-	protected string $app_id;
+	protected  $auth_key;
+	protected  $secret;
+	protected  $app_id;
 
-	protected string $cluster = 'eu';
-	protected bool $use_tls = true;
+	protected  $cluster = 'eu';
+	protected  $use_tls = true;
 
 
 	public function __construct() {

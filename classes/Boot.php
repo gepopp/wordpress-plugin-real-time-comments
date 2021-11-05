@@ -8,7 +8,7 @@ class Boot {
 	private static $instance = false;
 
 
-	private array $boot_classes = [
+	private $boot_classes = [
 		Enqueue::class,
 		Form::class,
 		NewComment::class,
@@ -27,8 +27,9 @@ class Boot {
 
 	}
 
-	public function boot() : void {
+	public function boot() {
 
+		$this->bootHooks();
 
 		foreach ( $this->boot_classes as $boot_class ) {
 
@@ -37,7 +38,18 @@ class Boot {
 			}
 		}
 
+	}
 
+	public function bootHooks(){
+
+		add_action( 'init', function (){
+			load_plugin_textdomain( 'real-time-comments', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		});
+
+		add_action('rest_api_init', function (){
+			$cl = new CommentsRest();
+			$cl->register_routes();
+		});
 	}
 
 	private function __construct() {

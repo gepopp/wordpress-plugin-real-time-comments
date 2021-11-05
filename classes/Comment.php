@@ -8,36 +8,36 @@ use Carbon\Carbon;
 class Comment {
 
 
-	public int $comment_ID;
+	public  $comment_ID;
 
-	public string $comment_date;
+	public  $comment_date;
 
-	public string $date_for_humans;
+	public  $date_for_humans;
 
-	public string $comment_content;
+	public  $comment_content;
 
-	public string $comment_karma;
+	public  $comment_karma;
 
-	public bool $comment_approved;
+	public  $comment_approved;
 
-	public int $comment_parent;
+	public  $comment_parent;
 
-	public int $comment_post_ID;
+	public  $comment_post_ID;
 
-	public int $author_id;
+	public  $author_id;
 
-	public string $comment_author;
+	public  $comment_author;
 
-	public string $author_avatar_url;
+	public  $author_avatar_url;
 
-	public int $child_count;
+	public  $child_count;
 
-	public array $children = [];
+	public  $children = [];
 
-	public int $user_id;
+	public  $user_id;
 
 
-	public function __construct( \WP_Comment|int $wp_comment  ) {
+	public function __construct(  $wp_comment  ) {
 
 		if(is_int($wp_comment)){
 			$wp_comment = get_comment( $wp_comment );
@@ -57,7 +57,7 @@ class Comment {
 	}
 
 
-	public function get_children( $wp_comment ): void {
+	public function get_children( $wp_comment ) {
 
 		$wp_children = $wp_comment->get_children(['format' => 'flat']);
 
@@ -67,7 +67,7 @@ class Comment {
 
 	}
 
-	public function diff_for_humans(): void {
+	public function diff_for_humans() {
 
 		Carbon::setLocale(get_locale());
 		$this->date_for_humans = Carbon::createFromFormat('Y-m-d H:i:s', $this->comment_date, get_option('timezone_string') )->diffForHumans();

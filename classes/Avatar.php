@@ -5,10 +5,10 @@ namespace RealTimeComments;
 class Avatar {
 
 
-	protected \WP_User|bool $user;
-	protected string $email;
+	protected $user;
+	protected $email;
 
-	public function __construct( \WP_User|bool $user = false, $email = false ) {
+	public function __construct( $user = false, $email = false ) {
 
 		$this->user = $user;
 		$this->email = $email;

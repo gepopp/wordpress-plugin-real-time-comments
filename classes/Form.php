@@ -7,8 +7,6 @@ class Form {
 
 	public function __construct() {
 
-		#TODO make this hook optional via admin setting option
-		#TODO make this hook optional for CPT's and via meta field for single posts
 		add_filter('comments_template', [$this,'swap_form']);
 	}
 
