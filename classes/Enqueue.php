@@ -24,6 +24,10 @@ class Enqueue {
 		wp_enqueue_script( 'rtc_admin_script', RTC_URL . "dist/admin{$ext}.js", [ 'jquery', 'wp-color-picker' ] );
 	}
 
+
+
+
+
 	public function enqueue_frontend_scripts() {
 
 
@@ -31,17 +35,21 @@ class Enqueue {
 			return;
 		}
 
+		$options    = get_option( 'rtc_general_settings' );
+
+		$stylesheet = $options['layout_comments_and_form'] ?? 'main';
+
+		$color      = $options['layout_main_color'] ?? '#707070'; //E.g. #FF0000
+		$rounding   = $options['layout_avatar_rounding'] ?? '100';
 
 		wp_enqueue_style(
 			'real_time_comments_styles',
-			trailingslashit( RTC_URL ) . 'dist/main.css',
+			trailingslashit( RTC_URL ) . "dist/{$stylesheet}.css",
 			[],
 			RTC_VERSION
 		);
 
-		$options    = get_option( 'rtc_general_settings' );
-		$color      = $options['layout_main_color'] ?? '#707070'; //E.g. #FF0000
-		$rounding   = $options['layout_avatar_rounding'] ?? '100';
+
 		$custom_css = "
                 .main-border{
                         border-color: {$color};
@@ -52,6 +60,9 @@ class Enqueue {
                 .avatar-radius{
                     border-radius: {$rounding}%;
                 }
+                .main-color{
+                    color: {$color} !important;
+                }
                 ";
 		wp_add_inline_style( 'real_time_comments_styles', $custom_css );
 
@@ -61,7 +72,9 @@ class Enqueue {
 			$ext = '';
 		}
 
-		wp_enqueue_script( 'real_time_comments_script', RTC_URL . "dist/main{$ext}.js", [], RTC_VERSION, true );
+
+
+		wp_enqueue_script( 'real_time_comments_script', RTC_URL . "dist/{$stylesheet}{$ext}.js", [], RTC_VERSION, true );
 		wp_localize_script( 'real_time_comments_script', 'translations', [
 			'submit'              => __( 'submit', 'real-time-comments' ),
 			'submit_warning'      => __( 'please enter at least 3 charachters', 'real-time-comments' ),

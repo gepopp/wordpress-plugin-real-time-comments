@@ -81,10 +81,22 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/js/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/js/classic.js");
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./assets/js/classic.js":
+/*!******************************!*\
+  !*** ./assets/js/classic.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_classic_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/classic.scss */ \"./assets/scss/classic.scss\");\n/* harmony import */ var _scss_classic_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_classic_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_comments_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/comments.vue */ \"./assets/js/components/comments.vue\");\n/* harmony import */ var _components_commentsForm_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/commentsForm.vue */ \"./assets/js/components/commentsForm.vue\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\nvar Api = axios__WEBPACK_IMPORTED_MODULE_4___default.a.create({\n  baseURL: rtc_xhr.rootapiurl,\n  headers: {\n    'content-type': 'application/json',\n    'X-WP-Nonce': rtc_xhr.nonce\n  }\n});\nvue__WEBPACK_IMPORTED_MODULE_1___default.a.prototype.$rest = Api;\nvar Ajax = axios__WEBPACK_IMPORTED_MODULE_4___default.a.create({\n  baseURL: rtc_xhr.ajaxurl,\n  headers: {\n    'content-type': 'application/json',\n    'X-WP-Nonce': rtc_xhr.nonce\n  }\n});\nvue__WEBPACK_IMPORTED_MODULE_1___default.a.prototype.$xhr = Ajax;\nvar app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({\n  el: '#real-time-comments-container',\n  components: {\n    comments: _components_comments_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n    commentsForm: _components_commentsForm_vue__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n  }\n});\n\n//# sourceURL=webpack:///./assets/js/classic.js?");
+
+/***/ }),
 
 /***/ "./assets/js/components/CommentsRefresher.js":
 /*!***************************************************!*\
@@ -266,26 +278,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
-/***/ "./assets/js/main.js":
-/*!***************************!*\
-  !*** ./assets/js/main.js ***!
-  \***************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/styles.scss */ \"./assets/scss/styles.scss\");\n/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_comments_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/comments.vue */ \"./assets/js/components/comments.vue\");\n/* harmony import */ var _components_commentsForm_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/commentsForm.vue */ \"./assets/js/components/commentsForm.vue\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\nvar Api = axios__WEBPACK_IMPORTED_MODULE_4___default.a.create({\n  baseURL: rtc_xhr.rootapiurl,\n  headers: {\n    'content-type': 'application/json',\n    'X-WP-Nonce': rtc_xhr.nonce\n  }\n});\nvue__WEBPACK_IMPORTED_MODULE_1___default.a.prototype.$rest = Api;\nvar Ajax = axios__WEBPACK_IMPORTED_MODULE_4___default.a.create({\n  baseURL: rtc_xhr.ajaxurl,\n  headers: {\n    'content-type': 'application/json',\n    'X-WP-Nonce': rtc_xhr.nonce\n  }\n});\nvue__WEBPACK_IMPORTED_MODULE_1___default.a.prototype.$xhr = Ajax;\nvar app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({\n  el: '#real-time-comments-container',\n  components: {\n    comments: _components_comments_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n    commentsForm: _components_commentsForm_vue__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n  }\n});\n\n//# sourceURL=webpack:///./assets/js/main.js?");
-
-/***/ }),
-
-/***/ "./assets/scss/styles.scss":
-/*!*********************************!*\
-  !*** ./assets/scss/styles.scss ***!
-  \*********************************/
+/***/ "./assets/scss/classic.scss":
+/*!**********************************!*\
+  !*** ./assets/scss/classic.scss ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!../../node_modules/postcss-loader/dist/cjs.js??ref--2-4!./styles.scss */ \"./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js?!./assets/scss/styles.scss\");\nif(content.__esModule) content = content.default;\nif(typeof content === 'string') content = [[module.i, content, '']];\nif(content.locals) module.exports = content.locals;\n// add the styles to the DOM\nvar add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesClient.js */ \"./node_modules/vue-style-loader/lib/addStylesClient.js\").default\nvar update = add(\"52a04014\", content, false, {});\n// Hot Module Replacement\nif(false) {}\n\n//# sourceURL=webpack:///./assets/scss/styles.scss?");
+eval("// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!../../node_modules/postcss-loader/dist/cjs.js??ref--2-4!./classic.scss */ \"./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js?!./assets/scss/classic.scss\");\nif(content.__esModule) content = content.default;\nif(typeof content === 'string') content = [[module.i, content, '']];\nif(content.locals) module.exports = content.locals;\n// add the styles to the DOM\nvar add = __webpack_require__(/*! ../../node_modules/vue-style-loader/lib/addStylesClient.js */ \"./node_modules/vue-style-loader/lib/addStylesClient.js\").default\nvar update = add(\"db1ccf70\", content, false, {});\n// Hot Module Replacement\nif(false) {}\n\n//# sourceURL=webpack:///./assets/scss/classic.scss?");
 
 /***/ }),
 
@@ -683,14 +683,14 @@ eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n/
 
 /***/ }),
 
-/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js?!./assets/scss/styles.scss":
-/*!************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ref--2-4!./assets/scss/styles.scss ***!
-  \************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js?!./assets/scss/classic.scss":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ref--2-4!./assets/scss/classic.scss ***!
+  \*************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/scss/styles.scss?./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ref--2-4");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./assets/scss/classic.scss?./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ref--2-4");
 
 /***/ }),
 

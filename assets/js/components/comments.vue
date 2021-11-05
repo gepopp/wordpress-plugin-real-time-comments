@@ -1,24 +1,24 @@
 <template>
-  <div class="relative w-full" v-if="comments.length">
+  <div class="comments-list" v-if="comments.length">
     <transition-group name="list" tag="div">
       <div v-for="comment in comments" class="list-item" :key="comment.comment_ID">
-        <div class="border-b border-gray-300 shadow p-4 w-full bg-white">
+        <div class="comment-card">
           <single-comment :comment="comment"></single-comment>
-          <div class="flex mt-3">
-            <div class="w-12 p-1"></div>
-            <div class="text-gray-700 text-sm w-full">
-              <span v-text="translations.reply_now" class="underline uppercase font-bold text-gray-600 cursor-pointer" @click="showReplies = comment.comment_ID"></span>
+          <div class="comment-reply-holder">
+            <div class="spacer"></div>
+            <div class="comment-reply-switcher">
+              <span v-text="translations.reply_now" class="reply-now" @click="showReplies = comment.comment_ID"></span>
               |
               <span v-text="translations.replies"></span> <span v-text="comment.children.length"></span>
-              <span v-if="comment.children.length && showReplies != comment.comment_ID" v-text="translations.show_replies" class="underline cursor-pointer" @click="showReplies = comment.comment_ID"></span>
-              <span v-if="comment.children.length && showReplies == comment.comment_ID" v-text="translations.close_replies" class="underline cursor-pointer" @click="showReplies = false"></span>
+              <span v-if="comment.children.length && showReplies != comment.comment_ID" v-text="translations.show_replies" class="reply-link" @click="showReplies = comment.comment_ID"></span>
+              <span v-if="comment.children.length && showReplies == comment.comment_ID" v-text="translations.close_replies" class="reply-link" @click="showReplies = false"></span>
               <div v-show="showReplies == comment.comment_ID" class="mt-3">
                 <div v-for="child in comment.children" :key="child.comment_ID">
-                  <div class="border-b border-gray-300 shadow p-4 w-full">
+                  <div class="comment-card">
                     <single-comment :comment="child"></single-comment>
                   </div>
                 </div>
-                <div class="p-3 bg-gray-300">
+                <div class="reply-form-holder">
                   <comments-form :post_id="post_id" :user_id="user_id" :parent_id="comment.comment_ID"></comments-form>
                 </div>
               </div>
@@ -29,22 +29,24 @@
     </transition-group>
     <div v-show="loading">
       <div v-for="n in paged" :key="n">
-        <div class="border-b border-gray-300 shadow p-4 w-full">
-          <div class="animate-pulse flex space-x-4">
-            <div class="rounded-full bg-gray-400 h-12 w-12"></div>
-            <div class="flex-1 space-y-4 py-1">
-              <div class="h-4 bg-gray-400 rounded w-3/4"></div>
-              <div class="space-y-2">
-                <div class="h-4 bg-gray-400 rounded"></div>
-                <div class="h-4 bg-gray-400 rounded w-5/6"></div>
+        <div class="comment-card">
+          <div class="loader-holder">
+            <div class="loader-holder-inner">
+              <div class="gravatar-placeholder main-bg avatar-radius"></div>
+              <div class="flex-1 space-y-4 py-1">
+                <div class="firstline main-bg"></div>
+                <div class="space-y-2">
+                  <div class="secondline main-bg"></div>
+                  <div class="secondline main-bg"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="flex justify-center p-3" v-show="!loading && showNext">
-      <p @click="next" class="cursor-pointer" v-text="translations.load_more"></p>
+    <div class="load-more rtc-submit-button-holder" v-show="!loading && showNext">
+      <p @click="next" class="rtc-submit-button main-bg" v-text="translations.load_more"></p>
     </div>
   </div>
   <div class="relative w-full h-48 flex items-center justify-center" v-else>
@@ -55,7 +57,7 @@
 <script>
 import SingleComment from "./SingleComment.vue";
 import commentsForm from "./commentsForm.vue";
-import { CommentsRefresher } from "./CommentsRefresher.js"
+import {CommentsRefresher} from "./CommentsRefresher.js"
 
 
 export default {

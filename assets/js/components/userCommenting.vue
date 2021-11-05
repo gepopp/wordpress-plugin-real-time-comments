@@ -1,24 +1,24 @@
 <template>
-  <div class="max-w-sm w-full mb-3" v-if="!user">
-    <div class="animate-pulse flex space-x-4">
-      <div class="rounded-full bg-gray-400 h-12 w-12"></div>
+  <div class="loader-holder" v-if="!user">
+    <div class="loader-holder-inner">
+      <div class="gravatar-placeholder main-bg avatar-radius"></div>
       <div class="flex-1 py-1">
-        <div class="h-4 bg-gray-400 rounded w-3/4 mb-2"></div>
-        <div class="h-3 bg-gray-400 rounded w-1/4"></div>
+        <div class="firstline main-bg"></div>
+        <div class="secondline main-bg"></div>
       </div>
     </div>
   </div>
-  <div class="max-w-sm w-full mb-3" v-else>
-    <div class="flex space-x-4">
-      <div class="avatar-radius h-12 w-12 border-2 main-border p-1">
-        <img :src="user.avatar_urls[48]" class="w-full h-auto avatar-radius">
+  <div class="commenting-user" v-else>
+    <div class="commenting-user-inner">
+      <div class="avatar avatar-radius main-border">
+        <img :src="user.avatar_urls[48]" class="avatar-radius">
       </div>
-      <div class="flex-1 py-1">
-        <div class="h-4 mb-2">
-          <p v-text="user.name" class="text-lg font-semibold mb-3"></p>
+      <div class="user-name">
+        <div class="name-holder">
+          <p v-text="user.name" class="name main-color"></p>
         </div>
-        <div class="h-3">
-          <p v-text="user.slug" class="text-sm"></p>
+        <div class="nickname-holder">
+          <p v-text="user.slug" class="nickname"></p>
         </div>
       </div>
     </div>

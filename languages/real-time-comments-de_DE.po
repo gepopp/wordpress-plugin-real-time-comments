@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Real Time Comments\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 21:00+0000\n"
-"PO-Revision-Date: 2021-11-03 12:13+0000\n"
+"PO-Revision-Date: 2021-11-05 08:26+0000\n"
 "Last-Translator: Gerhard Popp\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -62,7 +62,7 @@ msgstr "Bitte gib deinen Namen ein"
 
 #: classes/Enqueue.php:49
 msgid "Posted"
-msgstr "Geshrieben"
+msgstr "Geschrieben"
 
 #: classes/AdminSettingsPages.php:76
 msgid "Puser app id"

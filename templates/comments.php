@@ -12,7 +12,7 @@ $options = get_option('rtc_general_settings');
 <div id="real-time-comments-container" class="w-full container mx-auto">
 	<?php do_action( 'comment_form_before' ); ?>
     <div class="flex flex-col">
-        <h1 class="text-2xl font-semibold mb-3"><?php _e( 'Write a comment', 'real-time-comments' ) ?></h1>
+        <h1 class="comment-form-heading"><?php _e( 'Write a comment', 'real-time-comments' ) ?></h1>
 	    <?php do_action( 'comment_form_top' ); ?>
         <div>
             <comments-form :post_id="<?php echo get_the_ID() ?>" :user_id="<?php echo (int) get_current_user_id() ?>"></comments-form>

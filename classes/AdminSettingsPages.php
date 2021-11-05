@@ -99,6 +99,31 @@ class AdminSettingsPages {
 		);
 
 		add_settings_field(
+			'layout_comments_and_form',
+			__( 'Comments Form and List Layout', 'real-time-comments' ),
+			[
+				$this,
+				'rtc_settings_radio_field',
+			],
+			'rtc_settings_page',
+			'rtc_layout_settings_section',
+			[
+				'type'    => 'radio',
+				'name'    => 'layout_comments_and_form',
+				'options' => [
+					[
+						'value' => 'main',
+						'label' => __( 'Default Flat Layout', 'real-time-comments' ),
+					],
+					[
+						'value' => 'classic',
+						'label' => __( 'Classic Form and List Layout. Main Color setting applies to form.', 'real-time-comments' ),
+					],
+				],
+			]
+		);
+
+		add_settings_field(
 			'comments_load_via',
 			__( 'Load new comments via: ', 'real-time-comments' ),
 			[

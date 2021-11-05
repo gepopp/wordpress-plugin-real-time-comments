@@ -1,11 +1,11 @@
 <template>
-  <div class="relative">
+  <div class="comment-form-holder">
     <div v-if="user_id == 0">
-      <div class="flex space-x-3 w-full mb-3">
-        <div class="flex-1 relative">
+      <div class="no-user-form">
+        <div class="rtc-input-holder">
           <input type="text"
                  name="name"
-                 class="block p-3 w-full text-gray-800"
+                 class="rtc-input main-border"
                  :placeholder="translations.name_placeholder"
                  v-model="user.name"
                  @focus="errors.name = ''"
@@ -13,14 +13,14 @@
           <transition name="fade">
             <span v-show="errors.name"
                   v-text="errors.name"
-                  class="absolute bottom-0 p-0 text-xs text-red-800">
+                  class="rtc-input-error">
             </span>
           </transition>
         </div>
-        <div class="flex-1 relative">
+        <div class="rtc-input-holder">
           <input type="email"
                  name="email"
-                 class="block p-3 w-full text-gray-800"
+                 class="rtc-input main-border"
                  :placeholder="translations.email_placeholder"
                  v-model="user.email"
                  @focus="errors.email = ''"
@@ -28,7 +28,7 @@
           <transition name="fade">
             <span v-show="errors.email"
                   v-text="errors.email"
-                  class="absolute bottom-0 p-0 text-xs text-red-800">
+                  class="rtc-input-error">
             </span>
           </transition>
         </div>
@@ -36,25 +36,28 @@
     </div>
     <user-commenting :user="user" v-if="user_id"></user-commenting>
 
-    <div class="flex space-x-3">
+    <div class="comment-form">
       <!--      TODO add conditional styling option - use theme styles : dequeues plugin css-->
-      <div class="w-full relative">
-        <input
-            type="text"
-            class="block bg-white p-3 flex-1 w-full text-gray-800"
-            :placeholder="translations.comment_placeholder"
-            v-model="newComment"
-            v-on:keyup.enter="validation"
-            @focus="submitError = ''"
-        >
-        <p class="text-xs text-red-600 absolute" v-html="submitError"></p>
+      <div class="comment-input-field">
+        <div class="rtc-input-holder">
+          <input
+              type="text"
+              class="rtc-input main-border"
+              :placeholder="translations.comment_placeholder"
+              v-model="newComment"
+              v-on:keyup.enter="validation"
+              @focus="submitError = ''"
+          >
+          <span class="rtc-input-error" v-html="submitError"></span>
+        </div>
       </div>
-      <div class="relative"
+
+      <div class="rtc-submit-button-holder"
            @mouseenter="toggleWarn('enter')"
            @mouseleave="toggleWarn('leave')"
       >
         <button type="submit"
-                class="main-bg text-white text-center px-5 h-full flex items-center"
+                class="rtc-submit-button main-bg"
                 :disabled="!commentable"
                 :class="{'cursor-not-allowed' : !commentable }"
                 @click="validation"
@@ -71,14 +74,14 @@
         <transition name="fade">
           <div v-text="translations.submit_warning"
                v-show="warn"
-               class="absolute tooltip p-1 text-xs shadow-lg border border-red-900 bg-red-500 bg-opacity-50 text-white mt-3 rounded">
+               class="submit-tooltip">
           </div>
         </transition>
       </div>
     </div>
 
     <transition name="fade">
-      <div class="absolute top-0 left-0 w-full h-full bg-white flex justify-center items-center text-green-800" v-show="success">
+      <div class="comment-submit-success" v-show="success">
         <p v-text="translations.comment_succes"></p>
       </div>
     </transition>
@@ -143,7 +146,7 @@ export default {
         data.author = this.user_id;
       }
 
-      if(this.parent_id !== undefined){
+      if (this.parent_id !== undefined) {
         data.parent = this.parent_id
       }
 
@@ -198,9 +201,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.tooltip {
-  white-space: nowrap;
-}
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;

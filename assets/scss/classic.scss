@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-.comment-form-heading {
-  @apply text-2xl font-semibold mb-3;
+
+.main-color{
+  color: #707070;
 }
+
+.comment-form-heading {
+  @apply text-2xl font-semibold font-serif mb-3;
+}
+
 
 .loader-holder {
   @apply max-w-sm w-full mb-3;
@@ -13,15 +19,15 @@
     @apply animate-pulse flex space-x-4;
 
     .gravatar-placeholder {
-      @apply h-12 w-12;
+      @apply h-12 w-12 p-1 border-2;
     }
 
     .firstline {
-      @apply h-4 w-3/4 mb-2;
+      @apply h-4 w-3/4 mb-2 rounded;
     }
 
     .secondline {
-      @apply h-3 w-1/4;
+      @apply h-3 w-1/4 rounded;
     }
   }
 }
@@ -33,20 +39,20 @@
     @apply flex space-x-4;
 
     .avatar {
-      @apply h-12 w-12;
+      @apply h-12 w-12 border-2 p-1 bg-white;
 
       img {
-        @apply w-full h-auto;
+        @apply w-full h-auto p-0;
       }
 
     }
   }
 
   .user-name {
-    @apply flex-1;
+    @apply flex-1 font-serif;
 
     .name-holder {
-      @apply h-4 mb-2;
+      @apply h-4 mb-2 font-serif;
 
       .name {
         @apply text-lg font-semibold mb-3;
@@ -102,14 +108,15 @@
   @apply flex-1 relative mb-3;
 
   .rtc-input {
-    @apply block p-3 w-full text-gray-800;
+    @apply block p-2 w-full rounded border-2 focus:shadow;
+
   }
 
   .rtc-input-error {
     @apply absolute bottom-0 p-0 text-xs text-red-800 pl-3;
   }
 
-  .comment-submit-success {
+  .comment-submit-success{
     @apply absolute top-0 left-0 w-full h-full bg-white flex justify-center items-center text-green-800;
   }
 }
@@ -117,19 +124,18 @@
 .comment-form {
   @apply grid grid-cols-1 md:grid-cols-6 md:gap-x-3;
 
-  .comment-input-field {
+  .comment-input-field{
     @apply md:col-span-5;
   }
 }
-
-.rtc-submit-button-holder {
+.rtc-submit-button-holder{
   @apply relative flex justify-end;
 
   .rtc-submit-button {
-    @apply text-white text-center py-3 px-5 flex items-center mb-3 w-full flex justify-center whitespace-nowrap;
+    @apply text-white text-center py-2 px-5 flex items-center mb-3 w-full flex justify-center whitespace-nowrap rounded;
   }
 
-  .submit-tooltip {
+  .submit-tooltip{
     @apply absolute p-1 text-xs shadow-lg border border-red-900 bg-red-500 bg-opacity-50 text-white rounded;
   }
 }
@@ -141,38 +147,38 @@
   }
 }
 
-.comments-list {
+.comments-list{
   @apply relative w-full;
 
-  .comment-card {
-    @apply border-b border-gray-300 shadow p-4 w-full bg-white;
+  .comment-card{
+    @apply border-b border-gray-300 shadow p-4 w-full bg-white rounded p-3 my-3;
   }
 
-  .comment-reply-holder {
+  .comment-reply-holder{
     @apply flex mt-3 space-x-4;
 
-    .spacer {
+    .spacer{
       @apply w-12 p-1;
     }
 
-    .comment-reply-switcher {
+    .comment-reply-switcher{
       @apply text-gray-700 text-sm w-full border-t pt-3;
 
       .reply-now {
         @apply underline uppercase font-semibold text-gray-600 cursor-pointer;
       }
 
-      .reply-link {
+      .reply-link{
         @apply underline cursor-pointer;
       }
 
-      .reply-form-holder {
-        @apply p-3 bg-gray-100;
+      .reply-form-holder{
+        @apply p-3 bg-gray-100 rounded shadow;
       }
     }
   }
 
-  .load-more {
+  .load-more{
     @apply flex justify-center p-3 cursor-pointer;
   }
 }

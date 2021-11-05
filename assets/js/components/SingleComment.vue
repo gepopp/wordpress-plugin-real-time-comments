@@ -1,15 +1,17 @@
 <template>
-  <div class="flex space-x-4">
-    <div class="avatar-radius h-12 w-12 border-2 main-border p-1">
-      <img :src="comment.author_avatar_url" class="w-full h-auto avatar-radius">
-    </div>
-    <div class="flex-1 py-1">
-      <div class="h-4 rounded w-3/4 text-sm text-gray-600">
-        <span v-text="comment.comment_author" class="font-semibold"></span> |
-        <span v-text="translations.posted + ' ' + comment.date_for_humans"></span>
+  <div class="commenting-user">
+    <div class="commenting-user-inner">
+      <div class="avatar avatar-radius main-border">
+        <img :src="comment.author_avatar_url" class="avatar avatar-radius">
       </div>
-      <div class="space-y-2">
-        <div class="rounded font-semibold text-gray-800" v-html="comment.comment_content"></div>
+      <div class="comment-content">
+        <div class="commenting-user-meta">
+          <span v-text="comment.comment_author" class="main-color user-name"></span> |
+          <span v-text="translations.posted + ' ' + comment.date_for_humans" class="comment-date"></span>
+        </div>
+        <div class="comment-content-holder">
+          <div class="content" v-html="comment.comment_content"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -18,8 +20,8 @@
 <script>
 export default {
   name: "SingleComment",
-  props : ['comment'],
-  data(){
+  props: ['comment'],
+  data() {
     return {
       translations
     }

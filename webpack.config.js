@@ -12,6 +12,7 @@ const config = {
 	entry: {
 		main: './assets/js/main.js',
 		admin: './assets/js/admin.js',
+		classic: './assets/js/classic.js',
 	},
 	output: {
 		filename: `[name]${prefix}.js`,
