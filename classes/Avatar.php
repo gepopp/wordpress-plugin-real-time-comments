@@ -16,7 +16,7 @@ class Avatar {
 	}
 
 
-	public function get_url() : string{
+	public function get_url() {
 
 		if ( $this->user ) {
 			return get_avatar_url( $this->user->id, 48 );
@@ -30,6 +30,6 @@ class Avatar {
 			return "https://www.gravatar.com/avatar/$hash?s=48";
 		}
 
-		return RTC_URL . '/assets/images/emoji2.png';
+		return RTC_URL . 'dist/images/emoji2.png';
 	}
 }

@@ -39,14 +39,20 @@ class Comment {
 
 	public function __construct(  $wp_comment  ) {
 
-		if(is_int($wp_comment)){
-			$wp_comment = get_comment( $wp_comment );
+		if ( !is_a( $wp_comment, 'WP_Comment' ) ) {
+			$wp_comment = get_comment( ( int ) $wp_comment );
 		}
 
+		$ints = ['author_id', 'child_count', 'comment_ID', 'comment_approved', 'comment_karma', 'comment_parent', 'comment_post_ID'];
 
 		foreach ( get_object_vars( $wp_comment ) as $key => $value ) {
-			if(property_exists($this, $key))
-			$this->$key = $value;
+			if(property_exists($this, $key)){
+				if(in_array($key, $ints)){
+					$this->$key = (int) $value;
+				}else{
+					$this->$key = $value;
+				}
+			}
 		}
 
 

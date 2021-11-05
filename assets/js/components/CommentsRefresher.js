@@ -57,7 +57,8 @@ export class CommentsRefresher {
         var channel = pusher.subscribe(post_id.toString());
 
         channel.bind('new-comment', (data) => {
-            if (!data.comment_parent) {
+            console.log(data);
+            if (data.comment_parent == "0") {
                 this.comments.comments.unshift(data);
             } else {
                 this.comments.comments.forEach(comment => {
