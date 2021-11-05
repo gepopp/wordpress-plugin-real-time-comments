@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Real Time Comments\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-29 21:09+0000\n"
-"PO-Revision-Date: 2021-11-01 14:17+0000\n"
+"PO-Revision-Date: 2021-11-04 08:04+0000\n"
 "Last-Translator: Gerhard Popp\n"
 "Language-Team: Deutsch (Sie)\n"
 "Language: de_DE_formal\n"
@@ -33,12 +33,12 @@ msgstr "Geben Sie Ihren Kommentar ein"
 
 #. Author of the plugin
 msgid "Gerhard Popp"
-msgstr ""
+msgstr "Gerhard Popp"
 
 #. URI of the plugin
 #. Author URI of the plugin
 msgid "https://poppgerhard.at"
-msgstr ""
+msgstr "https://poppgerhard.at"
 
 #: classes/Enqueue.php:50
 msgid "load more"
@@ -79,7 +79,7 @@ msgstr "Pusher Secret"
 #. Name of the plugin
 #: classes/AdminSettingsPages.php:20
 msgid "Real Time Comments"
-msgstr ""
+msgstr "Real Time Comments"
 
 #: classes/AdminSettingsPages.php:101
 msgid "Real time comments settings"

@@ -19,6 +19,7 @@ namespace RealTimeComments;
 
 
 use Pusher\Pusher;
+use function Clue\StreamFilter\fun;
 
 if ( ! function_exists( 'get_plugin_data' ) ) {
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -38,7 +39,6 @@ $loader->addPsr4( 'RealTimeComments\\', __DIR__ . '/classes' );
 \A7\autoload( __DIR__ . '/shortcodes' );
 
 
-#TODO implement a factory for the Boot classes in first refactor
 $instance = Boot::getInstance();
 $instance->boot();
 
@@ -46,3 +46,7 @@ add_action( 'init', function (){
 	load_plugin_textdomain( 'real-time-comments', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 });
 
+add_action('rest_api_init', function (){
+	$cl = new CommentsRest();
+	$cl->register_routes();
+});

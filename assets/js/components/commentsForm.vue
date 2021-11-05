@@ -54,7 +54,7 @@
            @mouseleave="toggleWarn('leave')"
       >
         <button type="submit"
-                class="bg-gray-800 text-white text-center px-5 h-full flex items-center"
+                class="main-bg text-white text-center px-5 h-full flex items-center"
                 :disabled="!commentable"
                 :class="{'cursor-not-allowed' : !commentable }"
                 @click="validation"

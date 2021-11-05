@@ -13,7 +13,7 @@ class Boot {
 		Form::class,
 		NewComment::class,
 		AdminSettingsPages::class,
-		Rest::class
+		CommentsRest::class
 	];
 
 

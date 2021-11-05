@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full" v-if="comments.length">
     <transition-group name="list" tag="div">
-      <div v-for="comment in comments" class="list-item" :key="comment.comment_ID" >
+      <div v-for="comment in comments" class="list-item" :key="comment.comment_ID">
         <div class="border-b border-gray-300 shadow p-4 w-full bg-white">
           <single-comment :comment="comment"></single-comment>
           <div class="flex mt-3">
@@ -27,10 +27,8 @@
         </div>
       </div>
     </transition-group>
-
-
     <div v-show="loading">
-      <div v-for="n in 3" :key="n">
+      <div v-for="n in paged" :key="n">
         <div class="border-b border-gray-300 shadow p-4 w-full">
           <div class="animate-pulse flex space-x-4">
             <div class="rounded-full bg-gray-400 h-12 w-12"></div>
@@ -57,12 +55,12 @@
 <script>
 import SingleComment from "./SingleComment.vue";
 import commentsForm from "./commentsForm.vue";
-import Pusher from 'pusher-js';
+import { CommentsRefresher } from "./CommentsRefresher.js"
 
 
 export default {
   name: "comments",
-  props: ['post_id', 'count', 'user_id', 'paged'],
+  props: ['post_id', 'count', 'user_id', 'paged', 'app_key', 'load_via'],
   components: {
     commentsForm,
     SingleComment
@@ -81,32 +79,21 @@ export default {
   mounted() {
     this.loadComments(this.page);
 
-    const pusher = new Pusher('33200611800c555398d6', {
-      cluster: 'eu'
-    });
+    var refresher = new CommentsRefresher('pusher', this.app_key, this);
+    var loader = 'refreshVia' + this.load_via[0].toUpperCase() + this.load_via.substring(1);
+    refresher[loader](this.post_id);
 
-    var channel = pusher.subscribe(this.post_id.toString());
-    channel.bind('new-comment', (data) => {
-
-      if (!data.comment_parent) {
-        this.comments.unshift(data);
-      } else {
-        this.comments.forEach(comment => {
-          if (comment.comment_ID == data.comment_parent) {
-            comment.children.unshift(data);
-          }
-        })
-      }
-    });
   },
   methods: {
     loadComments() {
-      var url = '/rtc/v1/comments/' + this.post_id + '?page=' + this.page;
+
+      var url = '/rtc/v1/comments/?page=' + this.page + '&post=' + this.post_id + '&parent=0';
       this.$rest(url, {})
           .then((response) => {
             this.comments = this.comments.concat(response.data);
             this.loading = false;
-          })
+          });
+
     },
     next() {
       this.loading = true;
@@ -117,7 +104,7 @@ export default {
   },
   computed: {
     showNext() {
-      return (this.page * 10) < this.count
+      return (this.page * this.paged) < this.count
     }
   }
 

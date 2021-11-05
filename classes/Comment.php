@@ -61,7 +61,7 @@ class Comment {
 
 		$wp_children = $wp_comment->get_children(['format' => 'flat']);
 
-		foreach ( $wp_children as $wp_child ) {
+		foreach ( array_reverse($wp_children) as $wp_child ) {
 			$this->children[] = new Comment( $wp_child->comment_ID );
 		}
 

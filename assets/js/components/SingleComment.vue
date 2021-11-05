@@ -1,7 +1,7 @@
 <template>
   <div class="flex space-x-4">
-    <div class="rounded-full h-12 w-12 border-2 border-gray-900 p-1">
-      <img :src="comment.author_avatar_url" class="w-full h-auto rounded-full">
+    <div class="avatar-radius h-12 w-12 border-2 main-border p-1">
+      <img :src="comment.author_avatar_url" class="w-full h-auto avatar-radius">
     </div>
     <div class="flex-1 py-1">
       <div class="h-4 rounded w-3/4 text-sm text-gray-600">
