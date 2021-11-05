@@ -49,7 +49,7 @@
       <p @click="next" class="rtc-submit-button main-bg" v-text="translations.load_more"></p>
     </div>
   </div>
-  <div class="relative w-full h-48 flex items-center justify-center" v-else>
+  <div class="no-comments-holder" v-else>
     <p v-text="translations.no_comments"></p>
   </div>
 </template>
