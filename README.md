@@ -1,19 +1,19 @@
-# Wordpress Plugin for chat-like real time comments
+# Wordpress Plugin real time comments
 
-This Plugin swaps out the default or themes comment form against a chat-like module 
-that displays comments in real time using a sosket conntection with [socket.io](https://socket.io/)
+This Plugin replaces the standard WordPress comment form and the comments with a from and list that 
+updates via ajax calls or via a websocket connection over the [pusher](https://pusher.com) api to update comments in real time.
 
-## Next ToDo's for V 0.0.1
+It comes with two modern layout options how comments and the commenting form are displayed.
 
-- [x] install and enqueue [tailwind css](https://tailwindcss.com)
-- [x] implement a basic form
-- [x] install [socket.io](https://socket.io/) and [vue 3](https://vuejs.org/)
-        alternates to pusher api for easier installation and port foearding
-- [x] impement a socket connection when form is loaded
-- [x] first hello World Chat message
-- [x] implement redis with [predis/predis](https://github.com/predis/predis)
-- [x] persist chat messages in redis while chat is open
-- [x] persist chat messages as WordPress Comment when user leaves chat
-- [x] add admin section for plugin settings
+Currently its avalaible in english and german. If you wnat to help us with translation in 
+yor language email me to [gerhard@poppgerhard.at](mailto:gerhard@poppgerhard.at)
 
----
+## See it in use:
+- [Demosite](https://rtc-demo.poppgerhard.at/2021/11/06/hallo-welt/)
+- Real live use on [Die unabhängige Immobilien Redaktion](https://immobilien-redaktion.com)
+
+If you have this Plugin in use and want your site to be listed here just write me [gerhard@poppgerhard.at](mailto:gerhard@poppgerhard.at)
+
+## Customization
+Since we just started to develope this plugin and are now in version 1 there will be constantly updates in features and layout.
+If you have need for a customization or features just write me [gerhard@poppgerhard.at](mailto:gerhard@poppgerhard.at)
