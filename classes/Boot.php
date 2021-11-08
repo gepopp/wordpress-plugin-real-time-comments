@@ -12,8 +12,8 @@ class Boot {
 		Enqueue::class,
 		Form::class,
 		NewComment::class,
-		AdminSettingsPages::class,
-		CommentsRest::class
+		CommentsRest::class,
+		\RealTimeComments\Settings\AdminSettingsPages::class
 	];
 
 

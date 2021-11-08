@@ -10,9 +10,9 @@ let prefix = isProduction ? '.min' : '';
 
 const config = {
 	entry: {
-		main: './assets/js/main.js',
-		admin: './assets/js/admin.js',
-		classic: './assets/js/classic.js',
+		main: './source/js/main.js',
+		admin: './source/js/admin.js',
+		classic: './source/js/classic.js',
 	},
 	output: {
 		filename: `[name]${prefix}.js`,

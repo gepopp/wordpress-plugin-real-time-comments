@@ -22,6 +22,13 @@ class Enqueue {
 		}
 
 		wp_enqueue_script( 'rtc_admin_script', RTC_URL . "dist/admin{$ext}.js", [ 'jquery', 'wp-color-picker' ] );
+		wp_enqueue_style(
+			'real_time_comments_styles',
+			trailingslashit( RTC_URL ) . "dist/main.css",
+			[],
+			RTC_VERSION
+		);
+
 	}
 
 

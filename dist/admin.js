@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./assets/js/admin.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./source/js/admin.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./assets/js/admin.js":
+/***/ "./source/js/admin.js":
 /*!****************************!*\
-  !*** ./assets/js/admin.js ***!
+  !*** ./source/js/admin.js ***!
   \****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("(function ($) {\n  $(function () {\n    $('.color-picker').wpColorPicker();\n  });\n})(jQuery);\n\n//# sourceURL=webpack:///./assets/js/admin.js?");
+eval("(function ($) {\n  $(function () {\n    $('.color-picker').wpColorPicker();\n  });\n})(jQuery);\n\n//# sourceURL=webpack:///./source/js/admin.js?");
 
 /***/ })
 

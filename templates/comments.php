@@ -27,7 +27,9 @@ $options = get_option('rtc_general_settings');
                     :paged="<?php echo empty($options['comments_page']) ? 10 : $options['comments_page'] ?>"
                     app_key="<?php echo $options['pusher_auth_key'] ?>"
                     load_via="<?php echo $options['comments_load_via'] ?>"
-            ></comments>
+            >
+
+            </comments>
         </div>
 	    <?php do_action( 'comment_form' ); ?>
 	    <?php do_action( 'comment_form_after' ); ?>
