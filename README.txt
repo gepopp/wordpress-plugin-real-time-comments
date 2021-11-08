@@ -5,6 +5,8 @@ Plugin URL: https://poppgerhard.at/real-time-comments/
 Requires at Least: 5.0
 Tested Up To: 5.8
 Tags: plugin, comments, realtime, commentform, pusher, ajax, wordpress, wordpress.org, avatar
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Display comments in real time via ajax or pusher api.
 

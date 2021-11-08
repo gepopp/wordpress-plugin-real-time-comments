@@ -9,6 +9,9 @@ module.exports = {
     },
     theme: {
         extend : {
+            colors:{
+                'plugin' : '#3088BF'
+            }
         }
     },
     variants: {},

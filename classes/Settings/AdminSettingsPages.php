@@ -54,17 +54,17 @@ class AdminSettingsPages {
                         <div x-data="{ tab : 'main' }">
                             <div class="flex border-b border-gray-800 w-full mt-10">
                                 <div @click="tab = 'main'"
-                                     :class="tab == 'main' ? 'border-b-2 border-blue-800' : ''"
+                                     :class="tab == 'main' ? 'border-b-2 border-plugin' : ''"
                                      class="px-5 py-3 cursor-pointer">
                                     <?php _e('Main settings', 'real-time-comments') ?>
                                 </div>
                                 <div @click="tab = 'pusher'"
-                                     :class="tab === 'pusher' ? 'border-b-2 border-blue-800' : ''"
+                                     :class="tab === 'pusher' ? 'border-b-2 border-plugin' : ''"
                                      class="px-5 py-3 cursor-pointer">
                                     <?php _e('Pusher API settings', 'real-time-comments') ?>
                                 </div>
                                 <div @click="tab = 'layout'"
-                                     :class="tab === 'layout' ? 'border-b-2 border-blue-800' : ''"
+                                     :class="tab === 'layout' ? 'border-b-2 border-plugin' : ''"
                                      class="px-5 py-3 cursor-pointer">
 		                            <?php _e('Layout settings', 'real-time-comments') ?>
                                 </div>
@@ -89,7 +89,9 @@ class AdminSettingsPages {
                 </div>
                 <div class="pt-10 px-5">
                     <img src="<?php echo RTC_URL  ?>dist/images/logo-full.svg" class="border-none w-full h-auto"/>
-					<?php submit_button(); ?>
+                    <input type="submit" name="submit" id="submit"
+                           class="block w-full text-center bg-plugin py-3 text-center text-white my-10 shadow-lg hover:shadow cursor-pointer"
+                           value="<?php echo __('save', 'real-time-comments') ?>">
                     </form>
                 </div>
             </div>
