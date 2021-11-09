@@ -5,7 +5,7 @@
         <div class="rtc-input-holder">
           <input type="text"
                  name="name"
-                 class="rtc-input main-border"
+                 class="rtc-input main-border text-gray-800"
                  :placeholder="translations.name_placeholder"
                  v-model="user.name"
                  @focus="errors.name = ''"
@@ -20,7 +20,7 @@
         <div class="rtc-input-holder">
           <input type="email"
                  name="email"
-                 class="rtc-input main-border"
+                 class="rtc-input main-border text-gray-800"
                  :placeholder="translations.email_placeholder"
                  v-model="user.email"
                  @focus="errors.email = ''"
@@ -42,7 +42,7 @@
         <div class="rtc-input-holder">
           <input
               type="text"
-              class="rtc-input main-border"
+              class="rtc-input main-border text-gray-800"
               :placeholder="translations.comment_placeholder"
               v-model="newComment"
               v-on:keyup.enter="validation"

@@ -28,7 +28,6 @@ $options = get_option('rtc_general_settings');
                     app_key="<?php echo $options['pusher_auth_key'] ?>"
                     load_via="<?php echo $options['comments_load_via'] ?>"
             >
-
             </comments>
         </div>
 	    <?php do_action( 'comment_form' ); ?>
