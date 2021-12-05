@@ -53,6 +53,7 @@
 	},
 	"dependencies": {
 		"@tailwindcss/jit": "^0.1.18",
+		"alpinejs": "^3.7.0",
 		"axios": "^0.24.0",
 		"browserify": "^17.0.0",
 		"envify": "^4.1.0",

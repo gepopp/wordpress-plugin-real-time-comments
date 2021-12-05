@@ -12,6 +12,7 @@ const config = {
 	entry: {
 		main: './source/js/main.js',
 		admin: './source/js/admin.js',
+		admin_head: './source/js/admin_head.js',
 		classic: './source/js/classic.js',
 	},
 	output: {

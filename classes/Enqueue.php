@@ -7,7 +7,6 @@ class Enqueue {
 
 	public function __construct() {
 
-
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_frontend_scripts' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_scripts' ] );
 		add_filter( 'rest_allow_anonymous_comments', '__return_true' );
@@ -21,7 +20,13 @@ class Enqueue {
 			$ext = '';
 		}
 
-		wp_enqueue_script( 'rtc_admin_script', RTC_URL . "dist/admin{$ext}.js", [ 'jquery', 'wp-color-picker' ] );
+		wp_register_script( 'rtc_admin_script', RTC_URL . "dist/admin{$ext}.js", [
+			'jquery',
+			'wp-color-picker',
+		], RTC_VERSION, true );
+
+		wp_enqueue_script( 'rtc_admin_script' );
+
 		wp_enqueue_style(
 			'real_time_comments_styles',
 			trailingslashit( RTC_URL ) . "dist/main.css",
@@ -32,9 +37,6 @@ class Enqueue {
 	}
 
 
-
-
-
 	public function enqueue_frontend_scripts() {
 
 
@@ -42,12 +44,12 @@ class Enqueue {
 			return;
 		}
 
-		$options    = get_option( 'rtc_general_settings' );
+		$options = get_option( 'rtc_general_settings' );
 
 		$stylesheet = $options['layout_comments_and_form'] ?? 'main';
 
-		$color      = $options['layout_main_color'] ?? '#707070'; //E.g. #FF0000
-		$rounding   = $options['layout_avatar_rounding'] ?? '100';
+		$color    = $options['layout_main_color'] ?? '#707070'; //E.g. #FF0000
+		$rounding = $options['layout_avatar_rounding'] ?? '100';
 
 		wp_enqueue_style(
 			'real_time_comments_styles',
@@ -78,7 +80,6 @@ class Enqueue {
 		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 			$ext = '';
 		}
-
 
 
 		wp_enqueue_script( 'real_time_comments_script', RTC_URL . "dist/{$stylesheet}{$ext}.js", [], RTC_VERSION, true );

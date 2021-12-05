@@ -41,59 +41,55 @@ class AdminSettingsPages {
 
 	public function settings_page_content() {
 		?>
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <div class="wrap">
             <h2><?php _e( 'Real time comments settings', 'real-time-comments' ) ?></h2>
             <!-- Make a call to the WordPress function for rendering errors when settings are saved. -->
 			<?php settings_errors(); ?>
             <!-- Create the form that will be used to render our options -->
-
-            <div class="bg-white grid grid-cols-6 gap-5" x-data="{ tab : 'main' }">
-                <div class="pt-10 px-5">
-                    <img src="<?php echo RTC_URL ?>dist/images/logo-full.svg" class="border-none w-full h-auto"/>
-                    <div class="flex flex-col w-full mt-10">
-                        <div @click="tab = 'main'"
-                             :class="tab == 'main' ? 'border-b-2 border-plugin border-plugin font-bold' : 'border-b border-gray-500'"
-                             class="px-5 py-3 cursor-pointer">
-			                <?php _e('Main settings', 'real-time-comments') ?>
-                        </div>
-                        <div @click="tab = 'pusher'"
-                             :class="tab == 'pusher' ? 'border-b-2 border-plugin border-plugin font-bold' : 'border-b border-gray-500'"
-                             class="px-5 py-3 cursor-pointer">
-			                <?php _e('Pusher API settings', 'real-time-comments') ?>
-                        </div>
-                        <div @click="tab = 'layout'"
-                             :class="tab == 'layout' ? 'border-b-2 border-plugin border-plugin font-bold' : 'border-b border-gray-500'"
-                             class="px-5 py-3 cursor-pointer">
-			                <?php _e('Layout settings', 'real-time-comments') ?>
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <div class="col-span-5">
-                    <form method="post" action="options.php">
-                        <div>
-                            <div class="p-5 bg-gray-200">
-                                <div x-show.transition="tab == 'main'">
-									<?php settings_fields( 'rtc_main_settings_section' ); ?>
-									<?php do_settings_sections( 'rtc_main_settings_page' ); ?>
-                                </div>
-                                <div x-show.transition="tab == 'pusher'">
-									<?php settings_fields( 'rtc_pusher_settings_section' ); ?>
-									<?php do_settings_sections( 'rtc_pusher_settings_page' ); ?>
-                                </div>
-                                <div x-show.transition="tab == 'layout'">
-									<?php settings_fields( 'rtc_layout_settings_section' ); ?>
-									<?php do_settings_sections( 'rtc_layout_settings_page' ); ?>
-                                </div>
+            <div>
+                <div class="bg-white grid grid-cols-6 gap-5">
+                    <div class="pt-10 px-5">
+                        <img src="<?php echo RTC_URL ?>dist/images/logo-full.svg" class="border-none w-full h-auto"/>
+                        <div class="flex flex-col w-full mt-10">
+                            <div class="tab-button px-5 py-3 cursor-pointer"
+                                 id="main">
+								<?php _e( 'Main settings', 'real-time-comments' ) ?>
+                            </div>
+                            <div class="tab-button px-5 py-3 cursor-pointer"
+                                 id="pusher">
+								<?php _e( 'Pusher API settings', 'real-time-comments' ) ?>
+                            </div>
+                            <div    class="tab-button px-5 py-3 cursor-pointer"
+                                 id="layout">
+								<?php _e( 'Layout settings', 'real-time-comments' ) ?>
                             </div>
                         </div>
-                        <input type="submit" name="submit" id="submit"
-                               class="block w-full text-center bg-plugin py-3 text-center text-white my-10 shadow-lg hover:shadow cursor-pointer"
-                               value="<?php echo __( 'save', 'real-time-comments' ) ?>">
-                    </form>
+
+
+                    </div>
+                    <div class="col-span-5">
+                        <form method="post" action="options.php">
+                            <div>
+                                <div class="p-5 bg-gray-200">
+                                    <div class="tab" data-tab="main">
+										<?php settings_fields( 'rtc_main_settings_section' ); ?>
+										<?php do_settings_sections( 'rtc_main_settings_page' ); ?>
+                                    </div>
+                                    <div class="tab" data-tab="pusher">
+										<?php settings_fields( 'rtc_pusher_settings_section' ); ?>
+										<?php do_settings_sections( 'rtc_pusher_settings_page' ); ?>
+                                    </div>
+                                    <div class="tab" data-tab="layout">
+										<?php settings_fields( 'rtc_layout_settings_section' ); ?>
+										<?php do_settings_sections( 'rtc_layout_settings_page' ); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" name="submit" id="submit"
+                                   class="block w-full text-center bg-plugin py-3 text-center text-white my-10 shadow-lg hover:shadow cursor-pointer"
+                                   value="<?php echo __( 'save', 'real-time-comments' ) ?>">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
