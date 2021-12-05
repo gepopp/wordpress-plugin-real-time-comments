@@ -5,7 +5,6 @@ namespace RealTimeComments\Settings\Sections;
 use RealTimeComments\Settings\SettingsFieldsOutput;
 
 
-
 class PusherSettings {
 
 
@@ -18,7 +17,6 @@ class PusherSettings {
 
 
 	public function add_settings_section() {
-
 
 
 		add_settings_section(
@@ -80,9 +78,10 @@ class PusherSettings {
 			'rtc_general_settings'
 		);
 	}
+
 	public function settings_section_content() {
 
-		$link = sprintf( wp_kses( __( 'Real time comments uses Pusher as a websocket service to show new comments in real time. Setup your pusher account <a href="%s">here</a>', 'real-time-comments' ), [ 'a' => [ 'href' => [] ] ] ), esc_url( 'https://pusher.com/' ) );
-		echo $link;
+		$link = sprintf( __( 'Real time comments uses Pusher as a websocket service to show new comments in real time. Setup your pusher account <a href="%s">here</a>', 'real-time-comments' ), esc_url( 'https://pusher.com/' ));
+		echo wp_kses( $link, [ 'a' => [ 'href' => [] ] ] );
 	}
 }

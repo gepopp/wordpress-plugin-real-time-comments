@@ -57,7 +57,7 @@
            @mouseleave="toggleWarn('leave')"
       >
         <button type="submit"
-                class="rtc-submit-button bg-logo"
+                class="rtc-submit-button main-bg"
                 :disabled="!commentable"
                 :class="{'cursor-not-allowed' : !commentable }"
                 @click="validation"

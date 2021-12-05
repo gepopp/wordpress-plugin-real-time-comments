@@ -7,16 +7,16 @@ trait SettingsFieldsOutput {
 	public function rtc_settings_color_picker( $args ) {
 		$options = get_option( 'rtc_general_settings' );
 		?>
-        <input type="<?php echo $args['type'] ?>"
-               id="<?php echo $args['name'] ?>"
-               name="rtc_general_settings[<?php echo $args['name'] ?>]"
-               value="<?php echo $options[ $args['name'] ] ?? '' ?>"
+        <input type="<?php echo esc_attr( $args['type'] ) ?>"
+               id="<?php echo esc_attr( $args['name'] ) ?>"
+               name="rtc_general_settings[<?php echo esc_attr( $args['name'] ) ?>]"
+               value="<?php echo $options[ esc_attr( $args['name'] ) ] ?? '' ?>"
                class="regular-text color-picker"
-			<?php echo isset( $args['placeholder'] ) ? 'placeholder="' . $args['placeholder'] . '" ' : '' ?>
+			<?php echo isset( $args['placeholder'] ) ? 'placeholder="' . esc_attr( $args['placeholder'] ) . '" ' : '' ?>
         />
 		<?php
 		if ( isset( $args['label'] ) ) {
-			echo $args['label'];
+			echo wp_kses( $args['label'] );
 		}
 
 	}
@@ -29,7 +29,7 @@ trait SettingsFieldsOutput {
 			?>
             <div>
                 <label>
-                    <input type="radio" name="rtc_general_settings[<?php echo $args['name'] ?>]" value="<?php echo $option['value'] ?>"
+                    <input type="radio" name="rtc_general_settings[<?php echo esc_attr( $args['name'] ) ?>]" value="<?php echo esc_attr( $option['value'] ) ?>"
 						<?php checked( $options[ $args['name'] ] ?? 'ajax', $option['value'], true ) ?>
                     >
 					<?php echo $option['label'] ?>
@@ -45,16 +45,16 @@ trait SettingsFieldsOutput {
 		// First, we read the options collection
 		$options = get_option( 'rtc_general_settings' );
 		?>
-        <input type="<?php echo $args['type'] ?>"
-               id="<?php echo $args['name'] ?>"
-               name="rtc_general_settings[<?php echo $args['name'] ?>]"
-               value="<?php echo $options[ $args['name'] ] ?? '' ?>"
+        <input type="<?php echo esc_attr( $args['type'] ) ?>"
+               id="<?php echo esc_attr( $args['name'] ) ?>"
+               name="rtc_general_settings[<?php echo esc_attr( $args['name'] ) ?>]"
+               value="<?php echo $options[ esc_attr( $args['name'] ) ] ?? '' ?>"
                class="regular-text"
-			<?php echo isset( $args['placeholder'] ) ? 'placeholder="' . $args['placeholder'] . '" ' : '' ?>
+			<?php echo isset( $args['placeholder'] ) ? 'placeholder="' . esc_attr( $args['placeholder'] ) . '" ' : '' ?>
         />
 		<?php
 		if ( isset( $args['label'] ) ) {
-			echo $args['label'];
+			echo esc_attr( $args['label'] );
 		}
 	}
 

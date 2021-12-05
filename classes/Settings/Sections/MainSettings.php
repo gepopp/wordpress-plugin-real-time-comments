@@ -72,7 +72,7 @@ class MainSettings {
 	}
 
 	public function main_settings_section_content() {
-		echo __( 'How comments should be displayed.', 'real-time-comments' );
+		 _e( 'How comments should be displayed.', 'real-time-comments' );
 	}
 
 }
