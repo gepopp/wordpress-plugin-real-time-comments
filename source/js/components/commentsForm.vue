@@ -40,14 +40,14 @@
       <!--      TODO add conditional styling option - use theme styles : dequeues plugin css-->
       <div class="comment-input-field">
         <div class="rtc-input-holder">
-          <input
+          <textarea
               type="text"
               class="rtc-input main-border text-gray-800"
               :placeholder="translations.comment_placeholder"
               v-model="newComment"
               v-on:keyup.enter="validation"
               @focus="submitError = ''"
-          >
+          ></textarea>
           <span class="rtc-input-error" v-html="submitError"></span>
         </div>
       </div>
@@ -57,7 +57,7 @@
            @mouseleave="toggleWarn('leave')"
       >
         <button type="submit"
-                class="rtc-submit-button main-bg"
+                class="rtc-submit-button bg-logo"
                 :disabled="!commentable"
                 :class="{'cursor-not-allowed' : !commentable }"
                 @click="validation"

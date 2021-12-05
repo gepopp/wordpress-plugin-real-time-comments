@@ -9,7 +9,7 @@ $wp_comments = get_comments( [
 $options = get_option('rtc_general_settings');
 
 ?>
-<div id="real-time-comments-container" class="w-full container mx-auto">
+<div id="real-time-comments-container" class="w-full container mx-auto bg-black text-white p-5">
 	<?php do_action( 'comment_form_before' ); ?>
     <div class="flex flex-col">
         <h1 class="comment-form-heading"><?php _e( 'Write a comment', 'real-time-comments' ) ?></h1>
