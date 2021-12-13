@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Real Time Comments\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-29 21:09+0000\n"
+"PO-Revision-Date: 2021-11-04 08:04+0000\n"
+"Last-Translator: Gerhard Popp\n"
+"Language-Team: Deutsch (Sie)\n"
+"Language: de_DE_formal\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.5; wp-5.8.1\n"
+"X-Domain: real-time-comments"
+
+#: classes/Enqueue.php:48
+msgid "close replies"
+msgstr "Antworten schließen"
+
+#: classes/AdminSettingsPages.php:21
+msgid "Comments Settings"
+msgstr "Kommentare Einstellungen"
+
+#: classes/AdminSettingsPages.php:39
+msgid "Connection Settings to pusher"
+msgstr "Pusher Verbindungseinstellungen"
+
+#: classes/Enqueue.php:39
+msgid "enter your comment"
+msgstr "Geben Sie Ihren Kommentar ein"
+
+#. Author of the plugin
+msgid "Gerhard Popp"
+msgstr "Gerhard Popp"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://poppgerhard.at"
+msgstr "https://poppgerhard.at"
+
+#: classes/Enqueue.php:50
+msgid "load more"
+msgstr "weitere laden"
+
+#: classes/Enqueue.php:51
+msgid "Nobody commented yet, be the first"
+msgstr "Bis jetzt hat noch niemand kommentiert, seien Sie der Erste."
+
+#: classes/Enqueue.php:43
+msgid "please enter a valid email address"
+msgstr "Bitte ein gültige E-Mail Adresse eingeben"
+
+#: classes/Enqueue.php:38
+msgid "please enter at least 3 charachters"
+msgstr "Bitte mindestens 3 Zeichen eingeben"
+
+#: classes/Enqueue.php:42
+msgid "please enter your name"
+msgstr "Bitte geben Sie Ihren Namen ein"
+
+#: classes/Enqueue.php:49
+msgid "Posted"
+msgstr "Geschrieben"
+
+#: classes/AdminSettingsPages.php:76
+msgid "Puser app id"
+msgstr "Pusher Appp ID"
+
+#: classes/AdminSettingsPages.php:46
+msgid "Puser auth key"
+msgstr "Pusher Auth Key"
+
+#: classes/AdminSettingsPages.php:61
+msgid "Puser secret"
+msgstr "Pusher Secret"
+
+#. Name of the plugin
+#: classes/AdminSettingsPages.php:20
+msgid "Real Time Comments"
+msgstr "Real Time Comments"
+
+#: classes/AdminSettingsPages.php:101
+msgid "Real time comments settings"
+msgstr "Real time comments Einstellungen"
+
+#: classes/AdminSettingsPages.php:116
+#, php-format
+msgid ""
+"Real time comments uses Pusher as a websocket service to show new comments "
+"in real time. Setup your pusher account <a href=\"%s\">here</a>"
+msgstr ""
+"Diese Plugin verwendet die API von Pusher um Kommentare in Echtzeit an zu "
+"zeigen. <a href=\"%s\">Zu Pusher</a>"
+
+#: classes/Enqueue.php:45
+msgid "replies:"
+msgstr "Antworten: "
+
+#: classes/Enqueue.php:46
+msgid "reply now"
+msgstr "Jetzt antworten"
+
+#: classes/Enqueue.php:47
+msgid "show replies"
+msgstr "Antworten anzeigen"
+
+#: classes/Enqueue.php:37
+msgid "submit"
+msgstr "senden"
+
+#. Description of the plugin
+msgid ""
+"Swaps out the Wordpress default comments funcionality to a chat-like real "
+"time functionality"
+msgstr ""
+"Tauscht das WordPress Kommentarformular gegen eine Echtzeit Anwendung aus."
+
+#: classes/Enqueue.php:44
+msgid "thank you for your comment"
+msgstr "Vielen Dank! Ihr Kommentar wurde gespeichert"
+
+#: templates/comments.php:13
+msgid "Write a comment"
+msgstr "Schreiben Sie einen Kommentar "
+
+#: classes/Enqueue.php:41
+msgid "your email"
+msgstr "Ihre E-Mail Adresse"
+
+#: classes/Enqueue.php:40
+msgid "your name"
+msgstr "Ihr Name"
