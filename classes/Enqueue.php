@@ -15,6 +15,10 @@ class Enqueue {
 
 	public function enqueue_admin_scripts() {
 
+		global $pagenow;
+		wp_die($pagenow);
+
+
 		$ext = '.min';
 		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 			$ext = '';

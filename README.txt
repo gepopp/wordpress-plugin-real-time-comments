@@ -1,4 +1,4 @@
-=== Theme Check ===
+=== Real Time Comments With Pusher ===
 Contributors: gepopp
 Author URI: https://poppgerhard.at/
 Plugin URL: https://poppgerhard.at/real-time-comments/
@@ -25,5 +25,3 @@ Form and comment list are available in two adjustable layouts. There are also so
 * Comments list in two level depth displayable in two layouts
 * load comments in real time via ajax or websocket connection over the pusher api
 * Simple to install and setup
-
-== Screenshots ==
