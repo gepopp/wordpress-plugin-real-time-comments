@@ -15,9 +15,9 @@ class Enqueue {
 
 	public function enqueue_admin_scripts() {
 
-		global $pagenow;
-		wp_die($pagenow);
+		$screen = get_current_screen();
 
+		if($screen->id !== 'toplevel_page_rtc_settings_page') return;
 
 		$ext = '.min';
 		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
