@@ -4,7 +4,12 @@ namespace RealTimeComments\Settings;
 
 trait SettingsFieldsOutput {
 
+
+
+
+
 	public function rtc_settings_color_picker( $args ) {
+
 		$options = get_option( 'rtc_general_settings' );
 		?>
         <input type="<?php echo esc_attr( $args['type'] ) ?>"
@@ -21,7 +26,12 @@ trait SettingsFieldsOutput {
 
 	}
 
+
+
+
+
 	public function rtc_settings_radio_field( $args ) {
+
 		// First, we read the options collection
 		$options = get_option( 'rtc_general_settings' );
 
@@ -41,7 +51,11 @@ trait SettingsFieldsOutput {
 	}
 
 
+
+
+
 	public function rtc_settings_input_field( $args ) {
+
 		// First, we read the options collection
 		$options = get_option( 'rtc_general_settings' );
 		?>

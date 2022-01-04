@@ -5,15 +5,30 @@ namespace RealTimeComments;
 class Avatar {
 
 
+
+
+
 	protected $user;
+
+
+
+
+
 	protected $email;
+
+
+
+
 
 	public function __construct( $user = false, $email = false ) {
 
-		$this->user = $user;
+		$this->user  = $user;
 		$this->email = $email;
 
 	}
+
+
+
 
 
 	public function get_url() {
@@ -27,6 +42,7 @@ class Avatar {
 			$email = trim( $this->email ); // "MyEmailAddress@example.com"
 			$email = strtolower( $email ); // "myemailaddress@example.com"
 			$hash  = md5( $email );
+
 			return "https://www.gravatar.com/avatar/$hash?s=48";
 		}
 

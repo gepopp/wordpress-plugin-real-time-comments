@@ -5,15 +5,24 @@ namespace RealTimeComments\Settings\Sections;
 use RealTimeComments\Settings\SettingsFieldsOutput;
 
 
+
 class PusherSettings {
+
+
+
 
 
 	use SettingsFieldsOutput;
 
 
+
 	public function __construct() {
+
 		add_action( 'admin_init', [ $this, 'add_settings_section' ] );
 	}
+
+
+
 
 
 	public function add_settings_section() {
@@ -79,9 +88,13 @@ class PusherSettings {
 		);
 	}
 
+
+
+
+
 	public function settings_section_content() {
 
-		$link = sprintf( __( 'Real time comments uses Pusher as a websocket service to show new comments in real time. Setup your pusher account <a href="%s">here</a>', 'real-time-comments' ), esc_url( 'https://pusher.com/' ));
+		$link = sprintf( __( 'Real time comments uses Pusher as a websocket service to show new comments in real time. Setup your pusher account <a href="%s">here</a>', 'real-time-comments' ), esc_url( 'https://pusher.com/' ) );
 		echo wp_kses( $link, [ 'a' => [ 'href' => [] ] ] );
 	}
 }

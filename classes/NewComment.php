@@ -2,7 +2,7 @@
 
 namespace RealTimeComments;
 
-use Pusher\Pusher;
+use RealTimeComments\Pusher;
 
 class NewComment {
 
@@ -13,7 +13,7 @@ class NewComment {
 
 	public function comment_saved( $comment, $request ) {
 
-		$pusher = new \RealTimeComments\Pusher();
+		$pusher = new Pusher();
 
 		$comment = new Comment( $comment );
 

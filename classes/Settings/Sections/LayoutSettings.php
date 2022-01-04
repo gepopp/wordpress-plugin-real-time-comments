@@ -4,15 +4,25 @@ namespace RealTimeComments\Settings\Sections;
 
 use RealTimeComments\Settings\SettingsFieldsOutput;
 
+
+
 class LayoutSettings {
+
+
+
 
 
 	use SettingsFieldsOutput;
 
 
+
 	public function __construct() {
+
 		add_action( 'admin_init', [ $this, 'add_layout_settings_section' ] );
 	}
+
+
+
 
 
 	public function add_layout_settings_section() {
@@ -100,6 +110,10 @@ class LayoutSettings {
 			'rtc_general_settings'
 		);
 	}
+
+
+
+
 
 	public function layout_section_content() {
 

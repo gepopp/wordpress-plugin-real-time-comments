@@ -6,9 +6,17 @@ use RealTimeComments\Settings\Sections\MainSettings;
 use RealTimeComments\Settings\Sections\PusherSettings;
 use RealTimeComments\Settings\Sections\LayoutSettings;
 
+
+
 class AdminSettingsPages {
 
+
+
+
+
 	use SettingsFieldsOutput;
+
+
 
 	public function __construct() {
 
@@ -26,6 +34,9 @@ class AdminSettingsPages {
 	}
 
 
+
+
+
 	public function add_settings_page() {
 
 		add_menu_page(
@@ -39,7 +50,12 @@ class AdminSettingsPages {
 
 	}
 
+
+
+
+
 	public function settings_page_content() {
+
 		?>
         <div class="wrap">
             <h2><?php _e( 'Real time comments settings', 'real-time-comments' ) ?></h2>
@@ -59,7 +75,7 @@ class AdminSettingsPages {
                                  id="pusher">
 								<?php _e( 'Pusher API settings', 'real-time-comments' ) ?>
                             </div>
-                            <div    class="tab-button px-5 py-3 cursor-pointer"
+                            <div class="tab-button px-5 py-3 cursor-pointer"
                                  id="layout">
 								<?php _e( 'Layout settings', 'real-time-comments' ) ?>
                             </div>
