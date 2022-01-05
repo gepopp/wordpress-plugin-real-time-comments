@@ -6,7 +6,7 @@
 Plugin Name:  Real Time Comments with pusher
 Description:  Swaps out the Wordpress default comments funcionality to a chat-like real time functionality via ajax or pusher.com api
 Plugin URI:   https://poppgerhard.at/real-time-comments
-Version:      1.1.1
+Version:      1.1.3
 Requires PHP: 7.4
 Author:       Gerhard Popp
 Author URI:   https://poppgerhard.at

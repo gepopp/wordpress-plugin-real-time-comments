@@ -1,16 +1,13 @@
 module.exports = {
-    mode: "jit",
-    purge: {
-        enabled: true,
-        content: [
-            './**/*.php',
-            './dist/**/*.js'
-        ]
-    },
+    prefix: 'rtc-',
+    content: [
+        './**/*.php',
+        './dist/**/*.js'
+    ],
     theme: {
-        extend : {
-            colors:{
-                'plugin' : '#3088BF'
+        extend: {
+            colors: {
+                'plugin': '#3088BF'
             }
         }
     },

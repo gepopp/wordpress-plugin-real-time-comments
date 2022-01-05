@@ -1,24 +1,24 @@
 <template>
-  <div class="loader-holder" v-if="!user">
-    <div class="loader-holder-inner">
-      <div class="gravatar-placeholder main-bg avatar-radius"></div>
-      <div class="flex-1 py-1">
-        <div class="firstline main-bg"></div>
-        <div class="secondline main-bg"></div>
+  <div class="rtc-loader-holder" v-if="!user">
+    <div class="rtc-loader-holder-inner">
+      <div class="rtc-gravatar-placeholder rtc-main-bg rtc-avatar-radius"></div>
+      <div class="rtc-flex-1 rtc-py-1">
+        <div class="rtc-firstline rtc-main-bg"></div>
+        <div class="rtc-secondline rtc-main-bg"></div>
       </div>
     </div>
   </div>
-  <div class="commenting-user" v-else>
-    <div class="commenting-user-inner">
-      <div class="avatar avatar-radius main-border">
-        <img :src="user.avatar_urls[48]" class="avatar-radius">
+  <div class="rtc-commenting-user" v-else>
+    <div class="rtc-commenting-user-inner">
+      <div class="rtc-avatar rtc-avatar-radius rtc-main-border">
+        <img :src="user.avatar_urls[48]" class="artc-vatar-radius">
       </div>
-      <div class="user-name">
-        <div class="name-holder">
-          <p v-text="user.name" class="name main-color"></p>
+      <div class="rtc-user-name">
+        <div class="rtc-name-holder">
+          <p v-text="user.name" class="rtc-name rtc-main-color"></p>
         </div>
-        <div class="nickname-holder">
-          <p v-text="user.slug" class="nickname"></p>
+        <div class="rtc-nickname-holder">
+          <p v-text="user.slug" class="rtc-nickname"></p>
         </div>
       </div>
     </div>

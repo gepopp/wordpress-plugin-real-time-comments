@@ -3,185 +3,185 @@
 @tailwind utilities;
 
 
-.main-color{
+.rtc-main-color{
   color: #707070;
 }
 
-.comment-form-heading {
-  @apply text-2xl font-semibold font-serif mb-3;
+.rtc-comment-form-heading {
+  @apply rtc-text-2xl rtc-font-semibold rtc-font-serif rtc-mb-3;
 }
 
 
-.loader-holder {
-  @apply max-w-sm w-full mb-3;
+.rtc-loader-holder {
+  @apply rtc-max-w-sm rtc-w-full rtc-mb-3;
 
-  .loader-holder-inner {
-    @apply animate-pulse flex space-x-4;
+  .rtc-loader-holder-inner {
+    @apply rtc-animate-pulse rtc-flex rtc-space-x-4;
 
-    .gravatar-placeholder {
-      @apply h-12 w-12 p-1 border-2;
+    .rtc-gravatar-placeholder {
+      @apply rtc-h-12 rtc-w-12 rtc-p-1 rtc-border-2;
     }
 
-    .firstline {
-      @apply h-4 w-3/4 mb-2 rounded;
+    .rtc-firstline {
+      @apply rtc-h-4 rtc-w-3/4 rtc-mb-2 rtc-rounded;
     }
 
-    .secondline {
-      @apply h-3 w-1/4 rounded;
+    .rtc-secondline {
+      @apply rtc-h-3 rtc-w-1/4 rtc-rounded;
     }
   }
 }
 
-.commenting-user {
-  @apply w-full mb-3;
+.rtc-commenting-user {
+  @apply rtc-w-full rtc-mb-3;
 
-  .commenting-user-inner {
-    @apply flex space-x-4;
+  .rtc-commenting-user-inner {
+    @apply rtc-flex rtc-space-x-4;
 
-    .avatar {
-      @apply h-12 w-12 border-2 p-1 bg-white;
+    .rtc-avatar {
+      @apply rtc-h-12 rtc-w-12 rtc-border-2 rtc-p-1 rtc-bg-white;
 
       img {
-        @apply w-full h-auto p-0;
+        @apply rtc-w-full rtc-h-auto rtc-p-0;
       }
 
     }
   }
 
-  .user-name {
-    @apply flex-1 font-serif;
+  .rtc-user-name {
+    @apply rtc-flex-1 rtc-font-serif;
 
-    .name-holder {
-      @apply h-4 mb-2 font-serif;
+    .rtc-name-holder {
+      @apply rtc-h-4 rtc-mb-2 rtc-font-serif;
 
-      .name {
-        @apply text-lg font-semibold mb-3;
+      .rtc-name {
+        @apply rtc-text-lg rtc-font-semibold rtc-mb-3;
       }
     }
 
-    .nickname-holder {
-      @apply h-3;
+    .rtc-nickname-holder {
+      @apply rtc-h-3;
 
-      .nickname {
-        @apply text-sm text-gray-300;
+      .rtc-nickname {
+        @apply rtc-text-sm rtc-text-gray-300;
       }
     }
   }
 
-  .comment-content {
-    @apply flex-1;
+  .rtc-comment-content {
+    @apply rtc-flex-1;
 
-    .commenting-user-meta {
-      @apply text-sm text-gray-600;
+    .rtc-commenting-user-meta {
+      @apply rtc-text-sm rtc-text-gray-600;
 
-      .user-name {
-        @apply font-semibold;
+      .rtc-user-name {
+        @apply rtc-font-semibold;
       }
 
-      .comment-date {
-        @apply text-xs;
+      .rtc-comment-date {
+        @apply rtc-text-xs;
       }
 
     }
 
-    .comment-content-holder {
-      @apply space-y-2;
+    .rtc-comment-content-holder {
+      @apply rtc-space-y-2;
 
-      .content {
-        @apply font-semibold text-gray-800 mt-2;
+      .rtc-content {
+        @apply rtc-font-semibold rtc-text-gray-800 rtc-mt-2;
       }
     }
   }
 
 }
 
-.comment-form-holder {
+.rtc-comment-form-holder {
 
-  @apply relative;
+  @apply rtc-relative;
 
-  .no-user-form {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-x-3;
+  .rtc-no-user-form {
+    @apply rtc-grid rtc-grid-cols-1 md:rtc-grid-cols-2 rtc-gap-x-3;
   }
 }
 
 .rtc-input-holder {
-  @apply flex-1 relative mb-3;
+  @apply rtc-flex-1 rtc-relative rtc-mb-3;
 
   .rtc-input {
-    @apply block p-2 w-full rounded border-2 focus:shadow;
+    @apply rtc-block rtc-p-2 rtc-w-full rtc-rounded rtc-border-2 focus:rtc-shadow;
 
   }
 
   .rtc-input-error {
-    @apply absolute bottom-0 p-0 text-xs text-red-800 pl-3;
+    @apply rtc-absolute rtc-bottom-0 rtc-p-0 rtc-text-xs rtc-text-red-800 rtc-pl-3;
   }
 
-  .comment-submit-success{
-    @apply absolute top-0 left-0 w-full h-full bg-white flex justify-center items-center text-green-800;
+  .rtc-comment-submit-success{
+    @apply rtc-absolute rtc-top-0 rtc-left-0 rtc-w-full rtc-h-full rtc-bg-white rtc-flex rtc-justify-center rtc-items-center rtc-text-green-800;
   }
 }
 
-.comment-form {
-  @apply grid grid-cols-1 md:grid-cols-6 md:gap-x-3;
+.rtc-comment-form {
+  @apply rtc-grid rtc-grid-cols-1 md:rtc-grid-cols-6 md:rtc-gap-x-3;
 
-  .comment-input-field{
-    @apply md:col-span-5;
+  .rtc-comment-input-field{
+    @apply md:rtc-col-span-5;
   }
 }
 .rtc-submit-button-holder{
-  @apply relative flex justify-end;
+  @apply rtc-relative rtc-flex rtc-justify-end;
 
   .rtc-submit-button {
-    @apply text-white text-center py-2 px-5 flex items-center mb-3 w-full flex justify-center whitespace-nowrap rounded;
+    @apply rtc-text-white rtc-text-center rtc-py-2 rtc-px-5 rtc-flex rtc-items-center rtc-mb-3 rtc-w-full rtc-flex rtc-justify-center rtc-whitespace-nowrap rtc-rounded;
   }
 
-  .submit-tooltip{
-    @apply absolute p-1 text-xs shadow-lg border border-red-900 bg-red-500 bg-opacity-50 text-white rounded;
+  .rtc-submit-tooltip{
+    @apply rtc-absolute rtc-p-1 rtc-text-xs rtc-shadow-lg rtc-border rtc-border-red-900 rtc-bg-red-500 rtc-bg-opacity-50 rtc-text-white rtc-rounded;
   }
 }
 
 @screen sm {
   .rtc-submit-button {
-    @apply w-auto;
+    @apply rtc-w-auto;
 
   }
 }
 
-.comments-list{
-  @apply relative w-full;
+.rtc-comments-list{
+  @apply rtc-relative rtc-w-full;
 
-  .comment-card{
-    @apply border-b border-gray-300 shadow p-4 w-full bg-white rounded p-3 my-3;
+  .rtc-comment-card{
+    @apply rtc-border-b rtc-border-gray-300 rtc-shadow rtc-p-4 rtc-w-full rtc-bg-white rtc-rounded rtc-p-3 rtc-my-3;
   }
 
-  .comment-reply-holder{
-    @apply flex mt-3 space-x-4;
+  .rtc-comment-reply-holder{
+    @apply rtc-flex rtc-mt-3 rtc-space-x-4;
 
-    .spacer{
-      @apply w-12 p-1;
+    .rtc-spacer{
+      @apply rtc-w-12 rtc-p-1;
     }
 
-    .comment-reply-switcher{
-      @apply text-gray-700 text-sm w-full border-t pt-3;
+    .rtc-comment-reply-switcher{
+      @appl rtc-text-gray-700 rtc-text-sm rtc-w-full rtc-border-t rtc-pt-3;
 
-      .reply-now {
-        @apply underline uppercase font-semibold text-gray-600 cursor-pointer;
+      .rtc-reply-now {
+        @apply rtc-underline rtc-uppercase rtc-font-semibold rtc-text-gray-600 rtc-cursor-pointer;
       }
 
-      .reply-link{
-        @apply underline cursor-pointer;
+      .rtc-reply-link{
+        @apply rtc-underline rtc-cursor-pointer;
       }
 
-      .reply-form-holder{
-        @apply p-3 bg-gray-100 rounded shadow;
+      .rtc-reply-form-holder{
+        @apply rtc-p-3 rtc-bg-gray-100 rtc-rounded rtc-shadow;
       }
     }
   }
 
-  .load-more{
-    @apply flex justify-center p-3 cursor-pointer;
+  .rtc-load-more{
+    @apply rtc-flex rtc-justify-center rtc-p-3 rtc-cursor-pointer;
   }
 }
-.no-comments-holder {
-  @apply relative w-full h-48 flex items-center justify-center bg-white rounded shadow;
+.rtc-no-comments-holder {
+  @apply rtc-relative rtc-w-full rtc-h-48 rtc-flex rtc-items-center rtc-justify-center rtc-bg-white rtc-rounded rtc-shadow;
 }

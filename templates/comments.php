@@ -13,17 +13,17 @@ $options = get_option( 'rtc_general_settings' );
 
 
 ?>
-<div id="real-time-comments-container" class="w-full container mx-auto p-5">
+<div id="real-time-comments-container" class="rtc-w-full rtc-container rtc-mx-auto rtc-p-5">
 	<?php do_action( 'comment_form_before' ); ?>
-    <div class="flex flex-col">
-        <h1 class="comment-form-heading"><?php _e( 'Write a comment', 'real-time-comments' ) ?></h1>
+    <div class="rtc-flex rtc-flex-col">
+        <h1 class="rtc-comment-form-heading rtc-main-color"><?php _e( 'Write a comment', 'real-time-comments' ) ?></h1>
 		<?php do_action( 'comment_form_top' ); ?>
         <div>
             <comments-form :post_id="<?php echo get_the_ID() ?>" :user_id="<?php echo (int) get_current_user_id() ?>"></comments-form>
 			<?php do_action( 'comment_form_after_fields' ); ?>
         </div>
-        <hr class="py-3 my-3">
-        <div class="w-full overflow-y-scroll overflow-x-hidden scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100">
+        <hr class="rtc-py-3 rtc-my-3">
+        <div class="rtc-w-full rtc-overflow-y-scroll rtc-overflow-x-hidden rtc-scrollbar rtc-scrollbar-thumb-gray-900 rtc-scrollbar-track-gray-100">
             <comments
                     :post_id="<?php echo get_the_ID() ?>"
                     :count="<?php echo esc_attr( $wp_comments ) ?>"

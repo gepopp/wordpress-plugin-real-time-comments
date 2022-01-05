@@ -50,8 +50,8 @@ const config = {
 							postcssOptions: {
 								plugins: [
 									require('postcss-import'),
+									require('tailwindcss/nesting'),
 									require('tailwindcss')('tailwind.js'),
-									require('postcss-nested'),
 									require('autoprefixer'),
 								]
 							}

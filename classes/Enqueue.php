@@ -64,16 +64,16 @@ class Enqueue {
 
 
 		$custom_css = "
-                .main-border{
+                .rtc-main-border{
                         border-color: {$color};
                 }
-                .main-bg{
+                .rtc-main-bg{
                         background-color: {$color};
                 }
-                .avatar-radius{
+                .rtc-avatar-radius{
                     border-radius: {$rounding}%;
                 }
-                .main-color{
+                .rtc-main-color{
                     color: {$color} !important;
                 }
                 ";

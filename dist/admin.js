@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("(function ($) {\n  $(function () {\n    $('.color-picker').wpColorPicker();\n  });\n  var active = 'main';\n\n  function setActive(target) {\n    $('.tab').each(function (index, element) {\n      if ($(element).data('tab') == target) {\n        $(element).show();\n      } else {\n        $(element).hide();\n      }\n    });\n    $('.tab-button').each(function (index, element) {\n      $(element).removeClass('border-b-2 border-plugin border-plugin font-bold');\n    });\n    $('#' + target).addClass('border-b-2 border-plugin border-plugin font-bold');\n  }\n\n  setActive(active);\n  $('.tab-button').on('click', function (event) {\n    setActive($(event.target).attr('id'));\n  });\n})(jQuery);\n\n//# sourceURL=webpack:///./source/js/admin.js?");
+eval("(function ($) {\n  $(function () {\n    // wp class no namespace\n    $('.color-picker').wpColorPicker();\n  });\n  var active = 'main';\n\n  function setActive(target) {\n    $('.rtc-tab').each(function (index, element) {\n      if ($(element).data('tab') == target) {\n        $(element).show();\n      } else {\n        $(element).hide();\n      }\n    });\n    $('.rtc-tab-button').each(function (index, element) {\n      $(element).removeClass('rtc-border-b-2 rtc-border-plugin rtc-border-plugin rtc-font-bold');\n    });\n    $('#' + target).addClass('rtc-border-b-2 rtc-border-plugin rtc-border-plugin rtc-font-bold');\n  }\n\n  setActive(active);\n  $('.rtc-tab-button').on('click', function (event) {\n    setActive($(event.target).attr('id'));\n  });\n})(jQuery);\n\n//# sourceURL=webpack:///./source/js/admin.js?");
 
 /***/ })
 

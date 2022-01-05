@@ -22,7 +22,7 @@ class Form {
 		#TODO make form conditional for loggedin users over a provided admin setting
 		$form_template = RTC_DIR . '/templates/comments.php';
 
-		$form_template = do_action( 'rtc_swap_form', $form_template );
+		$form_template = apply_filters( 'rtc_swap_form', $form_template );
 
 		return $form_template;
 	}

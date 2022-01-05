@@ -1,16 +1,16 @@
 <template>
-  <div class="comment-form-holder">
+  <div class="rtc-comment-form-holder">
     <div v-if="user_id == 0">
-      <div class="no-user-form">
+      <div class="rtc-no-user-form">
         <div class="rtc-input-holder">
           <input type="text"
                  name="name"
-                 class="rtc-input main-border text-gray-800"
+                 class="rtc-input rtc-main-border rtc-text-gray-800"
                  :placeholder="translations.name_placeholder"
                  v-model="user.name"
                  @focus="errors.name = ''"
           />
-          <transition name="fade">
+          <transition name="rtc-fade">
             <span v-show="errors.name"
                   v-text="errors.name"
                   class="rtc-input-error">
@@ -20,12 +20,12 @@
         <div class="rtc-input-holder">
           <input type="email"
                  name="email"
-                 class="rtc-input main-border text-gray-800"
+                 class="rtc-input rtc-main-border rtc-text-gray-800"
                  :placeholder="translations.email_placeholder"
                  v-model="user.email"
                  @focus="errors.email = ''"
           />
-          <transition name="fade">
+          <transition name="rtc-fade">
             <span v-show="errors.email"
                   v-text="errors.email"
                   class="rtc-input-error">
@@ -36,13 +36,13 @@
     </div>
     <user-commenting :user="user" v-if="user_id"></user-commenting>
 
-    <div class="comment-form">
+    <div class="rtc-comment-form">
       <!--      TODO add conditional styling option - use theme styles : dequeues plugin css-->
-      <div class="comment-input-field">
+      <div class="rtc-comment-input-field">
         <div class="rtc-input-holder">
           <textarea
               type="text"
-              class="rtc-input main-border text-gray-800"
+              class="rtc-input rtc-main-border rtc-text-gray-800"
               :placeholder="translations.comment_placeholder"
               v-model="newComment"
               v-on:keyup.enter="validation"
@@ -57,16 +57,16 @@
            @mouseleave="toggleWarn('leave')"
       >
         <button type="submit"
-                class="rtc-submit-button main-bg"
+                class="rtc-submit-button rtc-main-bg"
                 :disabled="!commentable"
                 :class="{'cursor-not-allowed' : !commentable }"
                 @click="validation"
 
         >
-          <span v-show="submitting" class="mr-2">
-              <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          <span v-show="submitting" class="rtc-mr-2">
+              <svg class="rtc-animate-spin rtc--ml-1 rtc-mr-3 rtc-h-5 rtc-w-5 rtc-text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="rtc-opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="rtc-opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
             </span>
           <span v-text="translations.submit"></span>
@@ -74,14 +74,14 @@
         <transition name="fade">
           <div v-text="translations.submit_warning"
                v-show="warn"
-               class="submit-tooltip">
+               class="rtc-submit-tooltip">
           </div>
         </transition>
       </div>
     </div>
 
     <transition name="fade">
-      <div class="comment-submit-success" v-show="success">
+      <div class="rtc-comment-submit-success" v-show="success">
         <p v-text="translations.comment_succes"></p>
       </div>
     </transition>
@@ -202,11 +202,11 @@ export default {
 
 <style scoped lang="scss">
 
-.fade-enter-active, .fade-leave-active {
+.rtc-fade-enter-active, .rtc-fade-leave-active {
   transition: opacity .5s;
 }
 
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+.rtc-fade-enter, .rtc-fade-leave-to /* .fade-leave-active below version 2.1.8 */
 {
   opacity: 0;
 }

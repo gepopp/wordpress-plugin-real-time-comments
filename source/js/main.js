@@ -27,7 +27,7 @@ const Ajax = Axios.create({
 });
 Vue.prototype.$xhr = Ajax;
 
-
+Vue.config.ignoredElements = ['script'];
 
 const app = new Vue({
     el: '#real-time-comments-container',

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Real Time Comments\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-01 14:16+0000\n"
+"POT-Creation-Date: 2022-01-05 13:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,117 +16,234 @@ msgstr ""
 "X-Loco-Version: 2.5.5; wp-5.8.1\n"
 "X-Domain: real-time-comments"
 
-#: classes/Enqueue.php:48
+#: classes/Settings/Sections/LayoutSettings.php:55
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/LayoutSettings.php:45
+msgid "Avatar image rounding"
+msgstr ""
+
+#: classes/Settings/Sections/LayoutSettings.php:101
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/LayoutSettings.php:91
+msgid "Classic Form and List Layout. Main Color setting applies to form."
+msgstr ""
+
+#: classes/Enqueue.php:102
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:98
 msgid "close replies"
 msgstr ""
 
-#: classes/AdminSettingsPages.php:21
+#: classes/Settings/Sections/MainSettings.php:65
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/MainSettings.php:54
+msgid "Comments displayed"
+msgstr ""
+
+#: classes/Settings/Sections/LayoutSettings.php:84
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/LayoutSettings.php:74
+msgid "Comments Form and List Layout"
+msgstr ""
+
+#: classes/Settings/AdminSettingsPages.php:44
+#: real-time-comments-with-pusher/trunk/classes/Settings/AdminSettingsPages.php:33
 msgid "Comments Settings"
 msgstr ""
 
-#: classes/AdminSettingsPages.php:39
+#: classes/Settings/Sections/PusherSettings.php:33
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/PusherSettings.php:24
 msgid "Connection Settings to pusher"
 msgstr ""
 
-#: classes/Enqueue.php:39
+#: classes/Settings/Sections/LayoutSettings.php:97
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/LayoutSettings.php:87
+msgid "Default Flat Layout"
+msgstr ""
+
+#: classes/Enqueue.php:93
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:89
 msgid "enter your comment"
+msgstr ""
+
+#: classes/Settings/Sections/LayoutSettings.php:76
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/LayoutSettings.php:66
+msgid "Full rounding - circle"
 msgstr ""
 
 #. Author of the plugin
 msgid "Gerhard Popp"
 msgstr ""
 
-#. URI of the plugin
+#: classes/Settings/Sections/MainSettings.php:91
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/MainSettings.php:75
+msgid "How comments should be displayed."
+msgstr ""
+
 #. Author URI of the plugin
 msgid "https://poppgerhard.at"
 msgstr ""
 
-#: classes/Enqueue.php:50
+#. URI of the plugin
+msgid "https://poppgerhard.at/real-time-comments"
+msgstr ""
+
+#: classes/Settings/AdminSettingsPages.php:81
+#: real-time-comments-with-pusher/trunk/classes/Settings/AdminSettingsPages.php:64
+msgid "Layout settings"
+msgstr ""
+
+#: classes/Enqueue.php:104
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:100
 msgid "load more"
 msgstr ""
 
-#: classes/Enqueue.php:51
+#: classes/Settings/Sections/MainSettings.php:53
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/MainSettings.php:42
+msgid "Load new comments via ajax calls"
+msgstr ""
+
+#: classes/Settings/Sections/MainSettings.php:57
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/MainSettings.php:46
+msgid "Load new comments via pusher api"
+msgstr ""
+
+#: classes/Settings/Sections/MainSettings.php:40
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/MainSettings.php:29
+msgid "Load new comments via: "
+msgstr ""
+
+#: classes/Settings/Sections/LayoutSettings.php:40
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/LayoutSettings.php:30
+msgid "Main color of Form and Comments"
+msgstr ""
+
+#: classes/Settings/AdminSettingsPages.php:73
+#: real-time-comments-with-pusher/trunk/classes/Settings/AdminSettingsPages.php:56
+msgid "Main settings"
+msgstr ""
+
+#: classes/Settings/Sections/LayoutSettings.php:68
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/LayoutSettings.php:58
+msgid "No rounding"
+msgstr ""
+
+#: classes/Enqueue.php:105
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:101
 msgid "Nobody commented yet, be the first"
 msgstr ""
 
-#: classes/Enqueue.php:43
+#: classes/Enqueue.php:97
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:93
 msgid "please enter a valid email address"
 msgstr ""
 
-#: classes/Enqueue.php:38
+#: classes/Enqueue.php:92
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:88
 msgid "please enter at least 3 charachters"
 msgstr ""
 
-#: classes/Enqueue.php:42
+#: classes/Enqueue.php:96
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:92
 msgid "please enter your name"
 msgstr ""
 
-#: classes/Enqueue.php:49
+#: classes/Enqueue.php:103
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:99
 msgid "Posted"
 msgstr ""
 
-#: classes/AdminSettingsPages.php:76
+#: classes/Settings/Sections/PusherSettings.php:71
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/PusherSettings.php:62
 msgid "Puser app id"
 msgstr ""
 
-#: classes/AdminSettingsPages.php:46
+#: classes/Settings/Sections/PusherSettings.php:41
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/PusherSettings.php:32
 msgid "Puser auth key"
 msgstr ""
 
-#: classes/AdminSettingsPages.php:61
+#: classes/Settings/Sections/PusherSettings.php:56
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/PusherSettings.php:47
 msgid "Puser secret"
 msgstr ""
 
-#. Name of the plugin
-#: classes/AdminSettingsPages.php:20
+#: classes/Settings/AdminSettingsPages.php:77
+#: real-time-comments-with-pusher/trunk/classes/Settings/AdminSettingsPages.php:60
+msgid "Pusher API settings"
+msgstr ""
+
+#: classes/Settings/AdminSettingsPages.php:43
+#: real-time-comments-with-pusher/trunk/classes/Settings/AdminSettingsPages.php:32
 msgid "Real Time Comments"
 msgstr ""
 
-#: classes/AdminSettingsPages.php:101
+#: classes/Settings/AdminSettingsPages.php:62
+#: real-time-comments-with-pusher/trunk/classes/Settings/AdminSettingsPages.php:45
 msgid "Real time comments settings"
 msgstr ""
 
-#: classes/AdminSettingsPages.php:116
+#: classes/Settings/Sections/LayoutSettings.php:120
+#: classes/Settings/Sections/PusherSettings.php:97
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/LayoutSettings.php:106
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/PusherSettings.php:84
 #, php-format
 msgid ""
 "Real time comments uses Pusher as a websocket service to show new comments "
 "in real time. Setup your pusher account <a href=\"%s\">here</a>"
 msgstr ""
 
-#: classes/Enqueue.php:45
+#. Name of the plugin
+msgid "Real Time Comments with pusher"
+msgstr ""
+
+#: classes/Enqueue.php:99
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:95
 msgid "replies:"
 msgstr ""
 
-#: classes/Enqueue.php:46
+#: classes/Enqueue.php:100
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:96
 msgid "reply now"
 msgstr ""
 
-#: classes/Enqueue.php:47
+#: classes/Settings/Sections/LayoutSettings.php:72
+#: real-time-comments-with-pusher/trunk/classes/Settings/Sections/LayoutSettings.php:62
+msgid "Rounded edges"
+msgstr ""
+
+#: classes/Settings/AdminSettingsPages.php:107
+#: real-time-comments-with-pusher/trunk/classes/Settings/AdminSettingsPages.php:90
+msgid "save"
+msgstr ""
+
+#: classes/Enqueue.php:101
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:97
 msgid "show replies"
 msgstr ""
 
-#: classes/Enqueue.php:37
+#: classes/Enqueue.php:91
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:87
 msgid "submit"
 msgstr ""
 
 #. Description of the plugin
 msgid ""
 "Swaps out the Wordpress default comments funcionality to a chat-like real "
-"time functionality"
+"time functionality via ajax or pusher.com api"
 msgstr ""
 
-#: classes/Enqueue.php:44
+#: classes/Enqueue.php:98
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:94
 msgid "thank you for your comment"
 msgstr ""
 
-#: templates/comments.php:13
+#: templates/comments.php:19
+#: real-time-comments-with-pusher/trunk/templates/comments.php:19
 msgid "Write a comment"
 msgstr ""
 
-#: classes/Enqueue.php:41
+#: classes/Enqueue.php:95
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:91
 msgid "your email"
 msgstr ""
 
-#: classes/Enqueue.php:40
+#: classes/Enqueue.php:94
+#: real-time-comments-with-pusher/trunk/classes/Enqueue.php:90
 msgid "your name"
 msgstr ""
