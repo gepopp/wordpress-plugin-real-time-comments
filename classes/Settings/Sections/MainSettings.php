@@ -2,6 +2,7 @@
 
 namespace RealTimeComments\Settings\Sections;
 
+use RealTimeComments\Settings\GeneralSettings;
 use RealTimeComments\Settings\SettingsFieldsOutput;
 
 
@@ -12,7 +13,7 @@ class MainSettings {
 
 
 
-	use SettingsFieldsOutput;
+	use SettingsFieldsOutput, GeneralSettings;
 
 
 
@@ -46,7 +47,7 @@ class MainSettings {
 			'rtc_main_settings_section',
 			[
 				'type'    => 'radio',
-				'name'    => 'comments_load_via',
+				'name'    => 'rtc_general_settings[comments_load_via]',
 				'options' => [
 					[
 						'value' => 'ajax',
@@ -57,6 +58,7 @@ class MainSettings {
 						'label' => __( 'Load new comments via pusher api', 'real-time-comments' ),
 					],
 				],
+				'value' => $this->rtc_general_single_option(GeneralSettings::$load_via)
 			]
 		);
 
@@ -71,7 +73,8 @@ class MainSettings {
 			'rtc_main_settings_section',
 			[
 				'type' => 'number',
-				'name' => 'comments_page',
+				'name' => 'rtc_general_settings[comments_page]',
+				'value' => $this->rtc_general_single_option(GeneralSettings::$paged)
 			]
 		);
 

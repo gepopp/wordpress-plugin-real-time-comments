@@ -2,6 +2,7 @@
 
 namespace RealTimeComments\Settings\Sections;
 
+use RealTimeComments\Settings\GeneralSettings;
 use RealTimeComments\Settings\SettingsFieldsOutput;
 
 
@@ -11,8 +12,7 @@ class PusherSettings {
 
 
 
-
-	use SettingsFieldsOutput;
+	use SettingsFieldsOutput, GeneralSettings;
 
 
 
@@ -46,8 +46,9 @@ class PusherSettings {
 			'rtc_pusher_settings_page',
 			'rtc_pusher_settings_section',
 			[
-				'type' => 'text',
-				'name' => 'pusher_auth_key',
+				'type'  => 'text',
+				'name'  => 'rtc_general_settings[pusher_auth_key]',
+				'value' => $this->rtc_general_single_option( GeneralSettings::$pusher_key ),
 			]
 		);
 
@@ -61,8 +62,9 @@ class PusherSettings {
 			'rtc_pusher_settings_page',
 			'rtc_pusher_settings_section',
 			[
-				'type' => 'text',
-				'name' => 'pusher_secret',
+				'type'  => 'text',
+				'name'  => 'rtc_general_settings[pusher_secret]',
+				'value' => $this->rtc_general_single_option( GeneralSettings::$pusher_secret ),
 			]
 		);
 
@@ -76,8 +78,25 @@ class PusherSettings {
 			'rtc_pusher_settings_page',
 			'rtc_pusher_settings_section',
 			[
-				'type' => 'text',
-				'name' => 'pusher_app_id',
+				'type'  => 'text',
+				'name'  => 'rtc_general_settings[pusher_app_id]',
+				'value' => $this->rtc_general_single_option( GeneralSettings::$pusher_app_id ),
+			]
+		);
+
+		add_settings_field(
+			'pusher_cluster',
+			__( 'Puser Cluster', 'real-time-comments' ),
+			[
+				$this,
+				'rtc_settings_input_field',
+			],
+			'rtc_pusher_settings_page',
+			'rtc_pusher_settings_section',
+			[
+				'type'  => 'text',
+				'name'  => 'rtc_general_settings[pusher_cluster]',
+				'value' => $this->rtc_general_single_option( GeneralSettings::$pusher_cluster ),
 			]
 		);
 

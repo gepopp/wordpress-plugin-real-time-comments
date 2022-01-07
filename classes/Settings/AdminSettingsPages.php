@@ -65,21 +65,33 @@ class AdminSettingsPages {
             <!-- Create the form that will be used to render our options -->
             <div>
                 <div class="rtc-bg-white rtc-grid rtc-grid-cols-6 rtc-gap-5">
-                    <div class="rtc-pt-10 rtc-px-5">
+                    <div class="rtc-py-10 rtc-px-5">
                         <img src="<?php echo RTC_URL ?>dist/images/logo-full.svg" class="rtc-border-none rtc-w-full rtc-h-auto"/>
                         <div class="rtc-flex rtc-flex-col rtc-w-full rtc-mt-10">
-                            <div class="rtc-tab-button rtc-px-5 rtc-py-3 rtc-cursor-pointer hover:rtc-bg-plugin hover:rtc-bg-opacity-5"
-                                 id="main">
-								<?php _e( 'Main settings', 'real-time-comments' ) ?>
-                            </div>
-                            <div class="rtc-tab-button rtc-px-5 rtc-py-3 rtc-cursor-pointer hover:rtc-bg-plugin hover:rtc-bg-opacity-5"
-                                 id="pusher">
-								<?php _e( 'Pusher API settings', 'real-time-comments' ) ?>
-                            </div>
-                            <div class="rtc-tab-button rtc-px-5 rtc-py-3 rtc-cursor-pointer hover:rtc-bg-plugin hover:rtc-bg-opacity-5"
-                                 id="layout">
-								<?php _e( 'Layout settings', 'real-time-comments' ) ?>
-                            </div>
+
+							<?php
+							$tab_buttons = [
+								[
+									'id'          => 'main',
+									'button_text' => 'Main Settings',
+								],
+								[
+									'id'          => 'pusher',
+									'button_text' => 'Pusher API settings',
+								],
+								[
+									'id'          => 'layout',
+									'button_text' => 'Layout settings',
+								],
+							];
+
+							$tab_buttons = apply_filters( 'rtc-tab-buttons', $tab_buttons );
+
+							foreach ( $tab_buttons as $tab ) {
+								extract( $tab );
+								include RTC_DIR . '/templates/admin/tab-button.php';
+							}
+							?>
                         </div>
 
 
@@ -88,19 +100,34 @@ class AdminSettingsPages {
                         <form method="post" action="options.php">
                             <div>
                                 <div class="rtc-p-5 rtc-bg-gray-200">
-                                    <div class="rtc-tab" data-tab="main">
-										<?php settings_fields( 'rtc_main_settings_section' ); ?>
-										<?php do_settings_sections( 'rtc_main_settings_page' ); ?>
-                                    </div>
-                                    <div class="rtc-tab" data-tab="pusher">
-										<?php settings_fields( 'rtc_pusher_settings_section' ); ?>
-										<?php do_settings_sections( 'rtc_pusher_settings_page' ); ?>
-                                    </div>
-                                    <div class="rtc-tab" data-tab="layout">
-										<?php settings_fields( 'rtc_layout_settings_section' ); ?>
-										<?php do_settings_sections( 'rtc_layout_settings_page' ); ?>
-                                    </div>
+									<?php
+									$tabs = [
+										[
+											'id'      => 'main',
+											'section' => 'rtc_main_settings_section',
+											'page'    => 'rtc_main_settings_page',
+										],
+										[
+											'id'      => 'pusher',
+											'section' => 'rtc_pusher_settings_section',
+											'page'    => 'rtc_pusher_settings_page',
+										],
+										[
+											'id'      => 'layout',
+											'section' => 'rtc_layout_settings_section',
+											'page'    => 'rtc_layout_settings_page',
+										],
+									];
+
+									$tabs = apply_filters( 'rtc-admin-tabs', $tabs );
+
+									foreach ( $tabs as $tab ) {
+										extract( $tab );
+										include RTC_DIR . '/templates/admin/tab.php';
+									}
+									?>
                                 </div>
+
                             </div>
                             <input type="submit" name="submit" id="submit"
                                    class="rtc-block rtc-w-full rtc-text-center rtc-bg-plugin rtc-py-3 rtc-text-center rtc-text-white rtc-my-10 rtc-shadow-lg hover:rtc-shadow cursor-pointer"

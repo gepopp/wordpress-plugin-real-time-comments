@@ -2,6 +2,7 @@
 
 namespace RealTimeComments\Settings\Sections;
 
+use RealTimeComments\Settings\GeneralSettings;
 use RealTimeComments\Settings\SettingsFieldsOutput;
 
 
@@ -12,7 +13,7 @@ class LayoutSettings {
 
 
 
-	use SettingsFieldsOutput;
+	use SettingsFieldsOutput, GeneralSettings;
 
 
 
@@ -46,7 +47,8 @@ class LayoutSettings {
 			'rtc_layout_settings_section',
 			[
 				'type' => 'text',
-				'name' => 'layout_main_color',
+				'name' => 'rtc_general_settings[layout_main_color]',
+				'value'=> $this->rtc_general_single_option(GeneralSettings::$layout_color)
 			]
 		);
 
@@ -61,7 +63,8 @@ class LayoutSettings {
 			'rtc_layout_settings_section',
 			[
 				'type'    => 'radio',
-				'name'    => 'layout_avatar_rounding',
+				'name'    => 'rtc_general_settings[layout_avatar_rounding]',
+				'value'   => $this->rtc_general_single_option(GeneralSettings::$avatar_rounding),
 				'options' => [
 					[
 						'value' => 0,
@@ -90,7 +93,8 @@ class LayoutSettings {
 			'rtc_layout_settings_section',
 			[
 				'type'    => 'radio',
-				'name'    => 'layout_comments_and_form',
+				'name'    => 'rtc_general_settings[layout_comments_and_form]',
+				'value'   => $this->rtc_general_single_option(GeneralSettings::$form_layout),
 				'options' => [
 					[
 						'value' => 'main',
