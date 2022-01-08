@@ -62,7 +62,7 @@ trait GeneralSettings {
 
 
 
-	public function rtc_general_options() {
+	public static function rtc_general_options() {
 
 		$default = [
 			'comments_load_via'        => 'ajax',
@@ -76,6 +76,8 @@ trait GeneralSettings {
 			'layout_comments_and_form' => 'main',
 		];
 
+		$default = apply_filters('rtc-default-options', $default);
+
 		$saved = get_option( 'rtc_general_settings' );
 
 		return array_merge( $default, (array) $saved );
@@ -86,9 +88,9 @@ trait GeneralSettings {
 
 
 
-	public function rtc_general_single_option( $setting ) {
+	public static function rtc_general_single_option( $setting ) {
 
-		$settings = $this->rtc_general_options();
+		$settings = self::rtc_general_options();
 
 		return $settings[ $setting ];
 	}

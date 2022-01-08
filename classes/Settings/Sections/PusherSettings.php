@@ -48,7 +48,7 @@ class PusherSettings {
 			[
 				'type'  => 'text',
 				'name'  => 'rtc_general_settings[pusher_auth_key]',
-				'value' => $this->rtc_general_single_option( GeneralSettings::$pusher_key ),
+				'value' => self::rtc_general_single_option( GeneralSettings::$pusher_key ),
 			]
 		);
 
@@ -64,7 +64,7 @@ class PusherSettings {
 			[
 				'type'  => 'text',
 				'name'  => 'rtc_general_settings[pusher_secret]',
-				'value' => $this->rtc_general_single_option( GeneralSettings::$pusher_secret ),
+				'value' => self::rtc_general_single_option( GeneralSettings::$pusher_secret ),
 			]
 		);
 
@@ -80,7 +80,7 @@ class PusherSettings {
 			[
 				'type'  => 'text',
 				'name'  => 'rtc_general_settings[pusher_app_id]',
-				'value' => $this->rtc_general_single_option( GeneralSettings::$pusher_app_id ),
+				'value' => self::rtc_general_single_option( GeneralSettings::$pusher_app_id ),
 			]
 		);
 
@@ -96,7 +96,7 @@ class PusherSettings {
 			[
 				'type'  => 'text',
 				'name'  => 'rtc_general_settings[pusher_cluster]',
-				'value' => $this->rtc_general_single_option( GeneralSettings::$pusher_cluster ),
+				'value' => self::rtc_general_single_option( GeneralSettings::$pusher_cluster ),
 			]
 		);
 

@@ -58,7 +58,7 @@ class MainSettings {
 						'label' => __( 'Load new comments via pusher api', 'real-time-comments' ),
 					],
 				],
-				'value' => $this->rtc_general_single_option(GeneralSettings::$load_via)
+				'value' => self::rtc_general_single_option(GeneralSettings::$load_via)
 			]
 		);
 

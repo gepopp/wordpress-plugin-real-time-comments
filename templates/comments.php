@@ -1,15 +1,20 @@
 <?php
+/**
+ * @var $app_key
+ * @var $load_via
+ * @var $paged
+ */
+
+use RealTimeComments\Settings\GeneralSettings;
+
+
+
 $wp_comments = get_comments( [
 	'post_id' => get_the_ID(),
 	'parent'  => 0,
 	'status'  => 1,
 	'count'   => true,
 ] );
-
-$options = get_option( 'rtc_general_settings' );
-
-
-
 
 
 ?>
@@ -28,9 +33,9 @@ $options = get_option( 'rtc_general_settings' );
                     :post_id="<?php echo get_the_ID() ?>"
                     :count="<?php echo esc_attr( $wp_comments ) ?>"
                     :user_id="<?php echo (int) get_current_user_id() ?>"
-                    :paged="<?php echo empty( $options['comments_page'] ) ? 10 : esc_attr($options['comments_page']) ?>"
-                    app_key="<?php echo esc_attr( $options['pusher_auth_key'] ) ?>"
-                    load_via="<?php echo esc_attr( $options['comments_load_via'] ) ?>"
+                    :paged="<?php echo esc_attr( GeneralSettings::rtc_general_single_option( GeneralSettings::$paged ) ) ?>"
+                    app_key="<?php echo esc_attr( GeneralSettings::rtc_general_single_option( GeneralSettings::$pusher_app_id ) ) ?>"
+                    load_via="<?php echo esc_attr( GeneralSettings::rtc_general_single_option( GeneralSettings::$load_via ) ) ?>"
             >
             </comments>
         </div>

@@ -48,7 +48,7 @@ class LayoutSettings {
 			[
 				'type' => 'text',
 				'name' => 'rtc_general_settings[layout_main_color]',
-				'value'=> $this->rtc_general_single_option(GeneralSettings::$layout_color)
+				'value'=> self::rtc_general_single_option(GeneralSettings::$layout_color)
 			]
 		);
 
@@ -64,7 +64,7 @@ class LayoutSettings {
 			[
 				'type'    => 'radio',
 				'name'    => 'rtc_general_settings[layout_avatar_rounding]',
-				'value'   => $this->rtc_general_single_option(GeneralSettings::$avatar_rounding),
+				'value'   => self::rtc_general_single_option(GeneralSettings::$avatar_rounding),
 				'options' => [
 					[
 						'value' => 0,
@@ -94,7 +94,7 @@ class LayoutSettings {
 			[
 				'type'    => 'radio',
 				'name'    => 'rtc_general_settings[layout_comments_and_form]',
-				'value'   => $this->rtc_general_single_option(GeneralSettings::$form_layout),
+				'value'   => self::rtc_general_single_option(GeneralSettings::$form_layout),
 				'options' => [
 					[
 						'value' => 'main',
