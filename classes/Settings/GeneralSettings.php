@@ -14,7 +14,13 @@ trait GeneralSettings {
 
 
 
-	public static $paged = 'comments_page';
+	public static $page = 'comments_page';
+
+
+
+
+
+	public static $paged = 'comments_paged';
 
 
 
@@ -66,6 +72,7 @@ trait GeneralSettings {
 
 		$default = [
 			'comments_load_via'        => 'ajax',
+			'comments_paged'           => true,
 			'comments_page'            => 10,
 			'pusher_auth_key'          => '',
 			'pusher_secret'            => '',
@@ -76,16 +83,20 @@ trait GeneralSettings {
 			'layout_comments_and_form' => 'main',
 		];
 
-		$default = apply_filters('rtc-default-options', $default);
+		$default = apply_filters( 'rtc-default-options', $default );
 
 		$saved = get_option( 'rtc_general_settings' );
 
+
+		$saved['comments_page']  = get_option( 'comments_per_page' );
+
+		$paged = get_option('page_comments');
+		$saved['comments_paged'] = empty($paged) ? 0 : 1;
+
 		return array_merge( $default, (array) $saved );
 
+
 	}
-
-
-
 
 
 	public static function rtc_general_single_option( $setting ) {

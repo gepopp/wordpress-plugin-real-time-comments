@@ -11,7 +11,7 @@
   <div class="rtc-commenting-user" v-else>
     <div class="rtc-commenting-user-inner">
       <div class="rtc-avatar rtc-avatar-radius rtc-main-border">
-        <img :src="user.avatar_urls[48]" class="artc-vatar-radius">
+        <img :src="user.avatar_urls[48]" class="rtc-avatar-radius">
       </div>
       <div class="rtc-user-name">
         <div class="rtc-name-holder">
@@ -27,11 +27,25 @@
 
 <script>
 export default {
-  name: "userCommenting",
-  props: ['user']
+  name: "UserCommenting",
+  props: ['userId'],
+  data(){
+    return {
+      user: null
+    }
+  },
+  mounted() {
+    if (this.userId !== 0) {
+      this.$rest('/wp/v2/users/' + this.userId, {})
+          .then((response) => {
+            this.user = response.data;
+          });
+    } else {
+      this.user = {
+        email: '',
+        name: ''
+      }
+    }
+  }
 }
 </script>
-
-<style scoped>
-
-</style>

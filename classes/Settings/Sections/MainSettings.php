@@ -62,22 +62,6 @@ class MainSettings {
 			]
 		);
 
-		add_settings_field(
-			'comments_paged',
-			__( 'Comments displayed', 'real-time-comments' ),
-			[
-				$this,
-				'rtc_settings_input_field',
-			],
-			'rtc_main_settings_page',
-			'rtc_main_settings_section',
-			[
-				'type' => 'number',
-				'name' => 'rtc_general_settings[comments_page]',
-				'value' => $this->rtc_general_single_option(GeneralSettings::$paged)
-			]
-		);
-
 
 		register_setting(
 			'rtc_main_settings_section',

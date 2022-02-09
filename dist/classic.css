@@ -538,6 +538,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   cursor: pointer;
 }
 
+.rtc-list-none {
+  list-style-type: none;
+}
+
 .rtc-grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
@@ -547,6 +551,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.rtc-justify-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .rtc-gap-5 {
@@ -601,6 +611,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(48 136 191/var(--tw-bg-opacity));
 }
 
+.rtc-bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226/var(--tw-bg-opacity));
+}
+
+.rtc-bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231/var(--tw-bg-opacity));
+}
+
+.rtc-bg-opacity-25 {
+  --tw-bg-opacity: 0.25;
+}
+
 .rtc-p-5 {
   padding: 1.25rem;
 }
@@ -623,6 +647,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rtc-px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.rtc-py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.rtc-py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.rtc-py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .rtc-pt-10 {
@@ -650,6 +689,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rtc-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255/var(--tw-text-opacity));
+}
+
+.rtc-text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38/var(--tw-text-opacity));
+}
+
+.rtc-text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74/var(--tw-text-opacity));
 }
 
 .rtc-opacity-25 {

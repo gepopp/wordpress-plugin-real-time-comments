@@ -115,15 +115,13 @@
 }
 
 .rtc-comment-form {
-  @apply rtc-grid rtc-grid-cols-1 md:rtc-grid-cols-6 md:rtc-gap-x-3;
 
   .rtc-comment-input-field {
-    @apply md:rtc-col-span-5;
   }
 }
 
 .rtc-submit-button-holder {
-  @apply rtc-relative rtc-flex rtc-justify-end;
+  @apply rtc-relative rtc-flex rtc-flex-col rtc-justify-end;
 
   .rtc-submit-button {
     @apply rtc-text-white rtc-text-center rtc-py-3 rtc-px-5 rtc-flex rtc-items-center rtc-mb-3 rtc-w-full rtc-flex rtc-justify-center rtc-whitespace-nowrap;

@@ -43,7 +43,6 @@ export class CommentsRefresher {
                 })
 
         }, 3000);
-
     }
 
 
@@ -57,7 +56,6 @@ export class CommentsRefresher {
         var channel = pusher.subscribe(post_id.toString());
 
         channel.bind('new-comment', (data) => {
-            console.log(data);
             if (data.comment_parent == "0") {
                 this.comments.comments.unshift(data);
             } else {
